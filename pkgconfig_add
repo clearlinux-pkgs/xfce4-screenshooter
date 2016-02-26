@@ -1,0 +1,5 @@
+# This file contains additional pkgconfig build requirements that did
+# not get picked up automatically. One name per line, no whitespace.
+libxfce4panel-1.0
+gtk+-2.0
+libxfce4ui-1

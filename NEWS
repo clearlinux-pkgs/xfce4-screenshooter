@@ -1,0 +1,305 @@
+=== Version 1.8.2 ===
+
+  * Enhancements:
+    - Add imgur.com as possible upload option (bug #6899)
+    - Add appdate file (bug #11202)
+    - Make region selection with compositing on more usable on darker
+      backgrounds (bug #9592).
+    - Updated translations (thanks to translators!)
+
+  * Bugs fixed:
+    - Fix keyboard navigation between choices (bug #11325)
+    - Fix build with automake 1.13 (bug #10030)
+    - Use filename-friendly date format for saved files (bug #8445)
+
+=== Version 1.8.1 ===
+
+  * Enhancements:
+    - Adapting the panel plugin to xfce4-panel 4.9+. Andrzej.
+    - Add a clipboard CLI option (bug #8483). Tom Hope.
+    - Panel plugin is now built as a library.
+
+  * Bugs fixed:
+    - Fix crash with some window managers (bug #8080). Bruno Ramos.
+    - Fix crash with NULL save path (bug #8443).
+    - Install documentation to new location (bug #8116).
+    - Drop AC_PROG_LIBTOOL in favor of LT_PREREQ and LT_INIT.
+    - Add explicit -lm link to LIBADD (bug #8230).
+    - Plugin installation location compatible with xfce4-panel 4.9+.
+    - Update outdated man page.
+
+  * Updated translations: Arabic, Brazilian, Bulgarian, Chinese, Czech,
+    Dutch, German, Icelandic, Japanese, Korean, Lithuanian, Portuguese,
+    Turkish, Ukrainian, Uyghur.
+
+
+=== Version 1.8.0 ===
+
+  * Gtk 2.16, libxfce4ui and exo are now required.
+  * Xfce4 Screenshooter does not depend anymore on libxfcegui4.
+
+  * Enhancements:
+    - Capture the cursor using XFIXES (bug #7567).
+    - Add default responses for the dialogs (bug #6880).
+
+
+  * Bugs fixed:
+    - Fix build with Xfce's master branch.
+    - Remove obsolote 'hide' CLI option from the manpage.
+    - Use new GtkLabel link instead of SexyUrlLabel.
+    - Plug massive leak when cancelling in actions dialog.
+    - Link to X11 libs, fixes linking with gold.
+    - Fix a crash when the config file does not exist yet (bug #6460).
+    - Clean the build system for the new panel library.
+    - Fix BBCode, it cannot contain new lines and spaces.
+
+  * Translation updates: Arabic, Brazilian, Catalan, Croatian, Dutch,
+    French, Galician, Greek, Indonesian, Italian, Japanese, Kazakh,
+    Norwegian Bokmal, Polish, Portuguese, Punjabi, Romanian, Russian,
+    Slovak, Sinhala, Swedish, Turkish, Ukrainian and Uyghur.
+
+=== Version 1.7.9 ===
+
+  * The XMLRPC-C dependency has been replaced by libsoup.
+  * Gtk 2.14 is now required to compile.
+  * Switch to a non-recursive Makefile.am. This reduces the build time
+    and centralizes the build information.
+
+  * New features:
+    - Scrolling the panel plugin button changes the area to be captured.
+    - When compositing is on, use a nice partially transparent rubber-banding,
+      still needs some polishing.
+    - F1 opens the help page.
+    - Automatically fill the title and comment fields in the ZimageZ upload
+      information dialog.
+    - Make enter validate the upload in the ZimageZ upload information dialog.
+    - Use the XDG image directory as the default directory for saving
+      screenshots. If it does not exist, fallback to $HOME.
+    - Major interface rethinking:
+      + This new interface is based on a suggestion by Yves-Alexis Pérez. The
+        former main dialog is split into two dialogs: one for selecting the
+        region to be captured and the delay, while the second one displays a
+        preview of the screenshot and lists the available actions.
+      + The main application shows the first dialog, then the second one. If
+        one of the region CLI options is given, the screenshot is taken
+        accordingly and the second dialog is displayed.
+      + The panel plugin uses the first dialog as a configuration dialog. When
+        you click the plugin, the screenshot is taken and the second dialog is
+        shown.
+    - Allow drag and dropping of the preview to other applications in order to
+      paste the screenshot (Mike Massonnet).
+
+  * Bugs fixed:
+    - UTF-8 characters in user name or password caused a login failure.
+    - Fix all warnings triggered by running autogen.sh.
+    - Fix the ZimageZ upload when behind a proxy.
+    - Fix copying of links in the ZimageZ upload finished dialog.
+    - Fix 100% CPU usage when selecting a region in a non composited
+      environment (spotted by Gauvain Pocentek).
+    - When capturing a window with rounded corners, don't capture the
+      background of the window but make the screenshot transparent instead.
+    - Make sure the save folder in the panel plugin preferences is valid.
+    - Don't show the copy to clipboard option in the application if no
+      clipboard manager is running as the screenshot won't be preserved
+      after closing the application anyway in that case.
+    - Allow xfce4-screenshooter -r to be used as a command for a keybinding.
+    - Allow silent build.
+    - Fix most pre-build warnings.
+    - Escape screenshots path when opening them with an application.
+    - Plug some leaks in the application and in the panel plugin.
+    - Do not accept conflicting CLI options. Warn the user when he uses
+      CLI options which are not coherent.
+    - Correctly save preferences, even if the rc file does not exist
+      (Mike Massonnet).
+    - One second is now the minimal delay when using the interactive
+      mode. This caused the screenshooter dialog to be partially displayed
+      on the screenshot in some cases.
+
+  * A lot of updated translations for the application, the panel plugin and the
+    documentation. Thanks to the Xfce translation team!
+
+=== Version 1.6.0 ===
+
+  Gtk+ 2.12 and Glib 2.16 are now required to build the application
+  and the panel plugin. Xml-rpc and libcurl are now optionnal dependencies,
+  they should be replaced by libsoup in the future.
+
+  * Bugs fixed:
+    - The cursor was missplaced when taking a screenshot of a window (Bug #5204).
+
+  * Enhancements:
+    - Add an optional action to host screenshots on ZimageZ, a free online image
+      hosting solution.
+    - Add an option in the user interface to hide the mouse pointer on screenshots.
+    - Add an option in the application which allows the user to choose
+      whether the application should be closed after taking a screenshot. This
+      allows the user to take several screenshots in a row.
+    - New user interface based on Fabrice Viale's review. The dialog now has a
+      two column layout which makes it more appealing and more usable.
+    - Add a CLI option to hide the mouse pointer on screenshots.
+    - When selecting a region to be screenshooted, you can now use the Escape
+      keyboard key to cancel the operation.
+    - Screenshots can now be saved to remote locations that are connected using
+      gvfs-connect or Gigolo.
+    - Updated translations for the application and the documentation.
+
+=== Version 1.5.1 ===
+
+  * Bugfixes:
+    - fix a problem in the po file header which was displayed in
+      --help on OpenBSD.
+    - do not respawn the application after taking a screenshot, it can
+      be annoying.
+    - fix build without Gio (#4894).
+    - do not use a verb for the desktop file title (#4914).
+    - set the correct folder in the filechooser when using the -s CLI
+      option. Thanks to Enrico Tröger.
+    - fix a crash of the panel plugin involving the "Open with" list (#4971).
+    - also take the mouse pointer when taking a screenshot.
+    - plug a remaining leak.
+
+  * Translations updates.
+
+=== Version 1.5.0 ===
+
+  * Bugfixes:
+    - Fix some compiler warnings.
+    - Fix in typo in the desktop file for the application and the
+      plugin.
+    - Plug some leaks when saving a screenshot and when saving
+      preferences in the panel plugin.
+
+  * Enhancements:
+    - Updated translations.
+    - Indonesian documentation.
+
+=== Version 1.4.90 ===
+
+  The application is now named "Xfce4 Screenshooter", the adress of the
+  SVN trunk has changed and the one of the website too. See the README
+  file. xfce4-panel dependency has been bumped to >= 4.4.
+
+  * Bugfixes:
+    - correctly grab active windows. In particular, menus are grabbed
+      now (bug #4611).
+    - correctly save the preferences, even if ~/.config/xfce4 does
+      not exist. Thanks to Nick Schermer for the explanations.
+    - when saving the screenshot fails, show an error dialog
+      explaning why it failed.
+    - fix some remaining crashes when taking a screenshot of the active
+      window.
+    - only read the preferences file once when opening the application.
+    - don't automatically set filenames in the file chooser, as user set
+      ones are overriden (bug #4748).
+
+  * Enhancements:
+    - Use -V for the version CLI option.
+    - Add possibility to copy the screenshot to the clipboard, thanks to
+      David Collins.
+    - Add possibility to define region to be captured using the mouse,
+      thanks to David Collins.
+    - Add CLI options for the region selection and to open the
+      screenshot with an application.
+    - The dialog for the plugin preferences and the application has been
+      totally rewritten to improve the user interface: it should look
+      cleaner and tooltips have been added. Work started by David
+      Collins.
+    - When using delay, detect the area to screenshot after the delay,
+      and not before, as it caused weird results in some cases.
+    - Add a documentation accessible from the application and the panel
+      plugin.
+
+=== Version 1.4.0 ===
+
+  * Fix build with --disable-maintainer-mode on some configurations.
+
+=== Version 1.3.9.3 ===
+
+  * Fix build on some configurations.
+
+=== Version 1.3.9.2 ===
+
+  * Hopefully fix bug 4601, crash with "BadWindow" X error.
+  * Fix bug 4571.
+  * Translations:
+    Basque (Piarres Beobide), German (Fabian Nowak), Spanish (Abel Martín),
+    Indonesian (Andhika Padmawan), Japanese (Nobuhiro Iwamatsu),
+    Dutch (Vincent Tunru), European Portuguese (Nuno Miguel).
+
+=== Version 1.3.9.1 ===
+
+  * Apply a patch by Enrico Tröger to fix a crash.
+  * Plug some additionnal leaks.
+  * If no application is selected to open the screenshots, show the save dialog
+    as usual. If an application is selected, save the screenshot in /tmp without
+    showing the save dialog, and open it with the application. The user will
+    then be able to do what he wants to do with the picture, and to save it
+    where he wants using the application.
+  * Fallback to "exec" icon in the "open with" combo box.
+  * Updated or new translations:
+    Basque (Piarres Beobide e), Brazilian Portuguese (Og Maciel),
+    Catalan (Carles Muñoz Gorriz), Czech (Michal Várady),
+    Dutch (Stephan Arts), Finnish (Elias Julkunen), French,
+    Norwegian Bokmål (Terje Uriansrud), Turkish (Gökmen Görgen),
+
+=== Version 1.3.9.0 ===
+
+  * Add a dialog to set the screenshot options and take a screenshot when no
+    CLI option is given to the executable, add a menu entry for the application.
+  * Add options to open the screenshot with an application after taking it. This
+    depends on GIO.
+  * Use applets-screenshooter icon for preferences dialog and save dialog.
+  * Add some default icons taken from the Rodent icon theme to make sure the
+    applet has an icon.
+  * BUGFIX: Plug some remaining leaks and remove some useless code in main.
+  * BUGFIX: Fix a crash when using the screenshooter to take a screenshot of the
+    desktop when xfdesktop is set up not to display any icons.
+  * New and updated translations, thanks to the fabulous translation team.
+  * New CLI option to take a screenshot of the desktop.
+
+
+=== Version 1.3.2 ===
+
+  * BUGFIX: plug some stupid leaks.
+  * BUGFIX: when the active window is the desktop, instead of returning a
+    corrupted snapshot of the background image, return the whole desktop view.
+  * Code cleanup using libgdk functions.
+  * Use tooltips for panel plugin when compiled with gtk >= 2.12.
+  * Fix all compiler warnings.
+  * Comment the code and make it more readable.
+  * IMPROVEMENT: now, the name of the screenshot is updated while browsing in
+    the file chooser to set its save location.
+
+=== Version 1.3.1 ===
+
+  * BUGFIX: Fix -s switch with relative path.
+
+=== Version 1.3.0 ===
+
+  * Code cleanup, remove deprecated code.
+  * Reduce code duplication between the executable and the plugin.
+  * New CLI option to save screenshots without showing a save dialog.
+  * New CLI option to set the save directory.
+  * New CLI option to set a default save directory, saved in a rc file.
+  * BUGFIX: generate file names correctly, screenshots should now be
+    saved in the correct place, whatever mode is being used.
+  * A lot of updated/new translations.
+
+=== Version 1.2.0 ===
+
+  * Fix gcc warnings.
+  * Add manpage taken from Debian package.
+  * Cleaned the preferences dialog to make it look like the ones of
+    others panel plugins. Use frames to separate different options.
+  * Added default save location to the plugin.
+  * BUGFIX: the executable sometimes opened the save dialog in weird places,
+    now it shows the home directory by default.
+  * Some others code cleanups.
+
+=== Version 1.1.0 ===
+
+  * Delay now works.
+  * Canceling save now works.
+  * Executable to take screenshots from cli or with a keybinding.
+  * Many code improvements.
+  * Updated Brasilian, Croatian, Dutch, French and German translations.

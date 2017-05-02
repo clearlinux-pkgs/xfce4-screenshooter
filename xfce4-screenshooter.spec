@@ -4,7 +4,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.8.2
-Release  : 3
+Release  : 4
 URL      : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.8/xfce4-screenshooter-1.8.2.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.8/xfce4-screenshooter-1.8.2.tar.bz2
 Summary  : No detailed summary available

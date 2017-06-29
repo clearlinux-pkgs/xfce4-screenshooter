@@ -1,3 +1,1599 @@
+commit 2e882e3852e22dfa43792439a11c89dec720dc45
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Mon Jun 26 23:05:09 2017 -0300
+
+    Updates for release
+
+commit c91e572c4bd35b48c0da869b02aaa5e8671370f7
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Mon Jun 26 23:02:46 2017 -0300
+
+    Get rid of dead assignment
+    
+    Thanks to foutrelis
+
+commit 07dfa8e1b7a7c2ea02dc088ca1a68d7517712b45
+Author: Evangelos Foutras <evangelos@foutrelis.com>
+Date:   Sun Jun 25 04:02:23 2017 +0300
+
+    Implement alternate fix for crash on upload (#11879)
+    
+    The original fix complicated the code by individually allocating GValue
+    objects and then storing pointers to them in the job parameters array.
+    
+    While the crash on upload was fixed, the program would still crash on
+    exit due to the clear_func used for the array (g_free); as per GLib's
+    documentation, "clear_func is expected to clear the contents of the
+    array element it is given, but not free the element itself".
+    
+    The minimal fix in this commit should fix the original issue, and also
+    the crash on program exit (bug #13684).
+
+commit 3fb61ff16ffa05e47185e26389ca0105a9ef42b6
+Author: Evangelos Foutras <evangelos@foutrelis.com>
+Date:   Sun Jun 25 03:10:51 2017 +0300
+
+    Revert "Fix crash in GValueArray handling (#11879)"
+    
+    This reverts commit 6de6b7e2faec6b4f349be1819450d4f97d624110.
+
+commit dadfbf9441cbfdf0e7223407214cf182c41b94ba
+Author: Evangelos Foutras <evangelos@foutrelis.com>
+Date:   Sun Jun 25 03:10:40 2017 +0300
+
+    Revert "Fix crash when uploading to zimagez, followup to 6de6b7e (#11879)"
+    
+    This reverts commit 4569b715afc3b664bfc13b3ea77f493ef75f1c36.
+
+commit 7529273455e290a72439a94e3e084dff6b94f262
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sat Jun 24 17:19:32 2017 -0300
+
+    Post release tag bump.
+
+commit 0d8f972e2b957041e83e5e99d2472a427ee95a6e
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sat Jun 24 14:59:53 2017 -0300
+
+    Updates for release
+
+commit adee03109ae6b0120513c919c7b0f790134b4031
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sat Jun 24 14:23:15 2017 -0300
+
+    Downgrade xfce4-panel dependency to 4.12
+    
+    Using xfce_panel_plugin_get_icon_size own code as fallback
+
+commit 5a14715377c7c1e45ec5e5d83490fe9688ec4b99
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Jun 18 06:32:44 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 462ccbc7113cd64771c1a37ad7d52ec050fe7974
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Jun 4 01:06:41 2017 -0300
+
+    Use HTTPS for imgur (Bug #13415)
+    
+    Thanks to Mukundan Ragavan
+
+commit 740e7763d63d9b79e9cb1d7a103fe328bb636c67
+Author: Kukuh Syafaat <syafaatkukuh@gmail.com>
+Date:   Fri May 19 12:31:39 2017 +0200
+
+    I18n: Update translation id (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 92037e81480a8c9cf740a3bc9dfe6664ede5f8c3
+Author: Allan Nordhøy <epost@anotheragency.no>
+Date:   Sun May 7 12:31:42 2017 +0200
+
+    I18n: Update translation nb (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6a59ee5ba55869b4b2ef2307075bb81bca8bdfb7
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu May 4 20:52:11 2017 -0300
+
+    Post release tag bump
+
+commit 522ccac395feae3cec242c5ddc38cf529ef6d5d3
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu May 4 20:45:01 2017 -0300
+
+    Updates for release
+
+commit b48b118d030f13f1dd26823026385c9117b25bf2
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Fri Apr 28 19:56:13 2017 -0300
+
+    Fix IT_PROG_INTLTOOL warning
+
+commit 7d5d2643d4beb530173aa98e03b2460dd3bc7eeb
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Fri Apr 28 19:52:56 2017 -0300
+
+    Bump xfce4-panel dependency to 4.13
+    
+    Due xfce_panel_plugin_get_icon_size function
+
+commit 63dc51df1ee9803ed87cca6d537f837ba5ddfaa5
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 18 22:43:06 2017 -0300
+
+    Fix indentation
+
+commit c3aea8c0294c063d016fa5d2631940cd86a71d03
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 18 22:39:21 2017 -0300
+
+    Correctly unblock menu after closing properties dialog
+
+commit 372d9d844003ba6c8a2d49c0e569caf361f2d3b5
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Mon Apr 17 23:55:19 2017 -0300
+
+    Fix panel plugin set mode on scroll
+
+commit 09be8957b0175a29320069afb1cd09e8cace3cdc
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Mon Apr 17 23:55:04 2017 -0300
+
+    Fix panel plugin icon
+
+commit 9fb8e8582886e185fb784b22bd5f4f2731e20e18
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 23:58:02 2017 -0300
+
+    Force 1s delay for Select Region
+
+commit 1d4ed8bf94e4c21cd0a6b8eb5ba8dc1c04d1a276
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 23:03:44 2017 -0300
+
+    Set focus to the selected radio button
+
+commit 41c37f08a863c9e811d678d3176c8100923d526e
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 22:52:26 2017 -0300
+
+    Disable delay spinner if Select Region is selected
+
+commit e8bd378086c71f352c8cb3bbd3b7df63ccdd0572
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 22:38:56 2017 -0300
+
+    Replace soup_session_sync_new by soup_session_new
+
+commit b34037c0509b586bb50c6ee6a1cdf7de9f2d60ad
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 22:38:41 2017 -0300
+
+    Fix compilation warnings
+
+commit 1ef801bc912ef9937830392779461c41e10979b2
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 22:38:03 2017 -0300
+
+    Replace gtk_icon_info_free
+
+commit a38908680db6412611b2e9028ce835db35bf9b64
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 22:05:18 2017 -0300
+
+    Replace gdk_pointer/keyboard_grab by gdk_device_grab
+
+commit 25323f94c7408ab2156996d6a6d017a081138cc0
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 21:55:01 2017 -0300
+
+    Replace gdk_cursor_new by gdk_cursor_new_for_display
+
+commit 6c5c580681c051d73e52c3753d451225441ec4e0
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 21:49:19 2017 -0300
+
+    Replace gdk_cursor_unref
+
+commit ce5d5c1451e3d6a59e7e37e35b2b6e6418568cf4
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 21:49:05 2017 -0300
+
+    Fix compile warning
+
+commit 9bf14080dcd577ccafd6c73b37b622cf099fd9d4
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 21:48:31 2017 -0300
+
+    Replace pointer/keyboard related deprecated functions
+
+commit 8a8f0cdc207dee01e8b1005a5cbaa3c01c4cbd23
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Tue Apr 4 21:45:32 2017 -0300
+
+    Replace GTK_ICON_LOOKUP Flag
+
+commit 9b78ec2dc1e7fd8352d0ae5db93abe1187ffee3d
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Apr 2 16:41:59 2017 -0300
+
+    Replace GtkTable by GtkGrid
+
+commit 97c7cd509ab7b8a51ffe8e0a38edd13a0bb08248
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 22:27:19 2017 -0300
+
+    Replace GTK_STOCK_*
+
+commit 4f2d81346ff29e8328fd4ec319e53e0632824a18
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 22:23:17 2017 -0300
+
+    Replace GtkV/HBox by GtkBox
+
+commit 5a6a37050efadf0491261e8ae0a5a122a12b3fae
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 22:18:15 2017 -0300
+
+    Replace GtkAlignment
+
+commit 13d38a20914355a9a493b1bfb51d617c08300bc8
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 21:04:52 2017 -0300
+
+    Remove panel version check macros
+
+commit f0fd6436a694fd4b3bfcd3b13663a4d23aef09d9
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 20:31:49 2017 -0300
+
+    Drop katze-throbber
+
+commit e96ab226ca659c274f519cd6b4e996484bff3b9a
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Mar 30 00:19:46 2017 -0300
+
+    Fix indentation
+
+commit 42222a2aed895471834bd9b8169dbcd70b9b33aa
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Wed Mar 29 23:59:12 2017 -0300
+
+    Implement selection area with X11 code
+
+commit 7d82e3f874f16b8eb88f58c1352f528c87d4f226
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:34:46 2017 -0300
+
+    Replace more GDK deprecated code for selection mode non-compositing
+
+commit 129c81b68978a372c29f151a91ff01078cda8df7
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:34:24 2017 -0300
+
+    Add missing XInput2 include
+
+commit 97ce9ad17127c80138ef807fe21f5e70ac1d7f3f
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:32:51 2017 -0300
+
+    Replace gdk_draw_rectangle for selection mode (non-compositing)
+
+commit a4ccc699eb49a0bdcc4b9ce54e7518c6c7c37220
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:31:20 2017 -0300
+
+    Fix input event handling (now using XInput2)
+
+commit 7d8fcf8fb7cdb04f40cdcc4bd54c9de760b1c8ca
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:27:39 2017 -0300
+
+    More GDK related work to make selection mode work (composited)
+
+commit 271c65749a77832ea4667a1cf646079efcccb801
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:25:00 2017 -0300
+
+    Replace GDK deprecated functions/structures
+
+commit ababb76548bfea22611f48ca8d9b7a49361e6559
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:17:29 2017 -0300
+
+    Stop poking at widget internals, use accessors
+
+commit 07a20fc10497852d26bc9f8cfd40070bbe7a3d9a
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:05:46 2017 -0300
+
+    Replace katze-throbber by spinner (for now)
+
+commit 68361c86fb46334fe059970b95cd70ccfa744251
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Sun Feb 12 16:02:16 2017 -0300
+
+    Fix Makefile.am indentation
+
+commit f940c7f9f58e46172e8d66cd8ed6588f2f96fd46
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Feb 9 23:35:54 2017 -0300
+
+    Drop gtk_dialog_set_has_separator
+
+commit f10c9d4c310dad9a39cff6961f6878d09a58f9d6
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Feb 9 23:34:25 2017 -0300
+
+    Drop GTK_DIALOG_NO_SEPARATOR
+
+commit 309c0e04d7a2546c20e3916d04291954f2958d5a
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Feb 9 23:32:46 2017 -0300
+
+    Replace GDK_[key] by GDK_KEY_[key]
+
+commit 1cb64e5e34b7bcc6b773a7ba21482443c369ccd0
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Feb 9 20:37:29 2017 -0300
+
+    Set X-XFCE-API=2.0 in desktop file
+
+commit bc537dc3ce62615766863c736944dc186998c6ca
+Author: Andre Miranda <andre42m@gmail.com>
+Date:   Thu Feb 9 20:36:36 2017 -0300
+
+    Bump dependencies to check for gtk3/libxfce4ui-2/libxfce4panel-2.0
+
+commit bc3671d7b0076e05d88751736392b0226dbe84fa
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Apr 13 18:32:08 2017 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5906d4169fabd558f3c179a5279987d9328cb748
+Author: Piotr Sokół <psokol.l10n@gmail.com>
+Date:   Mon Apr 3 12:31:14 2017 +0200
+
+    I18n: Update translation pl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c3f90c8d7e13419021aa7ff17b29d0f3ccf73769
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Sat Mar 18 00:31:36 2017 +0100
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0f0ac11037c14038ec0832d3069253f78c3b615b
+Author: Allan Nordhøy <epost@anotheragency.no>
+Date:   Thu Feb 2 06:31:40 2017 +0100
+
+    I18n: Update translation nb (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4951a2e863e0f76578bbaed3cdd0229e441f27ff
+Author: Anonymous <noreply@xfce.org>
+Date:   Sun Jan 22 00:33:10 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0c36a0cb601041ade30d9e89cb812809cde47c69
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jan 17 18:32:17 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ee60e1f0387f813ce9424685b2172569226242eb
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Jan 14 12:32:56 2017 +0100
+
+    I18n: Update translation da (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6740bc5197d86d5eb42b15107a79ad16e80c9540
+Author: Oukiki Saleh <salehoukiki@gmail.com>
+Date:   Tue Dec 6 12:30:59 2016 +0100
+
+    I18n: Update translation ar (85%).
+    
+    69 translated messages, 12 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 21b6a78a5be00c6c68421abe0211970aa8bb8dd4
+Author: Cédric Valmary <cvalmary@yahoo.fr>
+Date:   Sun Oct 23 18:31:13 2016 +0200
+
+    I18n: Update translation oc (96%).
+    
+    78 translated messages, 3 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fe979b853785e99c28c773519862f3ff4185f323
+Author: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>
+Date:   Tue Oct 18 00:31:03 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 29d7f7353e2908d4fa6a335dc13476b24d5a3242
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Jun 24 18:31:59 2016 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c3132e439f23e42f4d3e999eab6d7e0757eb2c0d
+Author: Landry Breuil <landry@xfce.org>
+Date:   Mon Jun 13 23:06:47 2016 +0200
+
+    add empty line, test commit
+
+commit 0f54eaa9b060499be11db992e56a7171c753fc8b
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Mon Jun 13 06:31:02 2016 +0200
+
+    I18n: Update translation hr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4569b715afc3b664bfc13b3ea77f493ef75f1c36
+Author: Maarten <devnetraam@gmail.com>
+Date:   Sun Jun 12 22:25:03 2016 +0200
+
+    Fix crash when uploading to zimagez, followup to 6de6b7e (#11879)
+
+commit 4141de157b3b5188a9053fc99feee519b05b448d
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon Jun 6 12:31:07 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f67f4ff35586b7c20450851774ebbe5e0ab61d3f
+Author: Nuno Miguel <nunomgue@gmail.com>
+Date:   Tue May 31 18:31:03 2016 +0200
+
+    I18n: Update translation pt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 680e6c9d19e9d1ce9c7cec6b823dc182fb4a1401
+Author: Nobuhiro Iwamatsu <iwamatsu@nigauri.org>
+Date:   Thu May 19 06:31:12 2016 +0200
+
+    I18n: Update translation ja (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4ceae0d0f69f3deaa5c83a68db3ab9eba2398ab4
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Mon May 16 12:30:52 2016 +0200
+
+    I18n: Update translation hr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 9b50da886e5e597b1abf4541177da7f3e2a5db9f
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Wed May 4 12:31:39 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 9b000d73c15d33b0071a24bfdda9c07100c0334a
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 18:31:24 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c05f26919ae8b52526f137b0f1dcafaeaafe0634
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 12:32:08 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 423ddccfd0e7da2a1c85581de869a14b9dccac87
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Tue May 3 00:32:19 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c08f6a81ef1964dbdd6e835bff9494927ab76981
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Mon May 2 00:33:09 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fd437900e1f7b9a9bebd741113c2a5a0f7472e36
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Sun May 1 18:31:49 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a83eb32453a5c206381266d7c51f4e746bd29c0e
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Sun May 1 12:32:19 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2d28e65008985046f8d3f1d3250338d19e2a48c6
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Sun May 1 00:31:36 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3ac36ed23994e09f3aa6aa2645265270bb4ec393
+Author: Robert Antoni Buj i Gelonch <rbuj@fedoraproject.org>
+Date:   Sat Apr 30 12:31:53 2016 +0200
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit cf4bee34d798f376252682df036ef159bf245fbf
+Author: gyeben <gyonkibendeguz@gmail.com>
+Date:   Tue Mar 29 18:32:14 2016 +0200
+
+    I18n: Update translation hu (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 091fc72d4dd0ad1c96e7d34add3df5bb4ae13a24
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Mar 18 00:33:00 2016 +0100
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5952b0a0a907c9d0fa7cde65d9dec1f8d827b3bb
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Wed Feb 17 12:30:53 2016 +0100
+
+    I18n: Update translation sr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f0eab8439861b4c70907deaf02fcf272b7b508a7
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Thu Feb 4 06:31:17 2016 +0100
+
+    I18n: Update translation el (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 087a9547bb0e4591a7b6d99b01c862a91ef84cf7
+Author: Apostolos Papadimitriu <apostolos.papadimitriu@gmail.com>
+Date:   Thu Feb 4 00:31:36 2016 +0100
+
+    I18n: Update translation el (66%).
+    
+    54 translated messages, 27 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ef1e7093213058afb4ada9143bdd640d0255c149
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Thu Jan 28 18:31:02 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 14415633e65b1bd607fb66551a1ea53c75fbc619
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Wed Jan 27 00:31:00 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 93e5cdeae449d2e282f2832bf44bbdc04931ec47
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Fri Jan 22 12:35:27 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7cd0a3e75b8672a65bbef21a223e3c2473d7077d
+Author: Davidmp <medipas@gmail.com>
+Date:   Tue Jan 19 00:30:46 2016 +0100
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a84386b6e68cac313b9777772b9c32d684296959
+Author: Davidmp <medipas@gmail.com>
+Date:   Mon Jan 18 18:30:46 2016 +0100
+
+    I18n: Update translation ca (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 09a1c8578b8224c11f501f1e5dbb198105f15dac
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Sun Jan 17 18:31:34 2016 +0100
+
+    I18n: Update translation he (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1e9c2610e15e4a037d2d648f59076b7b88f8cf41
+Author: Theppitak Karoonboonyanan <theppitak@gmail.com>
+Date:   Wed Jan 13 06:32:18 2016 +0100
+
+    I18n: Update translation th (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 74df7129c230fa4bd79d0b58acebddc0d4c23c7a
+Author: Pasi Lallinaho <pasi@shimmerproject.org>
+Date:   Wed Jan 13 06:32:18 2016 +0100
+
+    I18n: Update translation fi (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b61cf48bf36720ef6b3bbe1f5e130ee915900c3d
+Author: Pasi Lallinaho <pasi@shimmerproject.org>
+Date:   Wed Jan 13 00:31:36 2016 +0100
+
+    I18n: Update translation fi (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 564966d5e038201d54cf5207b5dafa58ffc0f66e
+Author: Theppitak Karoonboonyanan <theppitak@gmail.com>
+Date:   Tue Jan 12 06:30:45 2016 +0100
+
+    I18n: Update translation th (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fb711d194793a3d68995eba678da1a5c38fbbaa8
+Author: Allan Nordhøy <epost@anotheragency.no>
+Date:   Tue Dec 29 00:30:50 2015 +0100
+
+    I18n: Update translation nb (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 23e8c6940d492a39c57f5902b9d68df1072cdd3f
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Mon Dec 28 00:31:24 2015 +0100
+
+    I18n: Update translation is (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 50d2dd3c1da25c0982ff7f5f87ad5ad68e2235ea
+Author: Cristian Marchi <cri.penta@gmail.com>
+Date:   Sat Dec 26 12:30:45 2015 +0100
+
+    I18n: Update translation it (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2fc0d2b43269a7f1ada021844fb9a288faa1ff0d
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Sat Dec 26 00:30:59 2015 +0100
+
+    I18n: Update translation sv (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3581a3e583283204aeeea753cf9249a2c9e76c8d
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Mon Dec 14 18:31:41 2015 +0100
+
+    I18n: Update translation is (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 514b459c2899ad27053c0c9bf8a251c2e0334a21
+Author: Xfce Bot <transifex@xfce.org>
+Date:   Mon Dec 14 18:31:41 2015 +0100
+
+    I18n: Update translation ca (62%).
+    
+    51 translated messages, 30 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e50529f499c6644d801e9f39c16ef6be23bc2eb9
+Author: Sveinn í Felli <sv1@fellsnet.is>
+Date:   Fri Dec 11 18:32:09 2015 +0100
+
+    I18n: Update translation is (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 00d617be4990ecf5ba3365014cbc0d83719b0f18
+Author: Necdet Yücel <necdetyucel@gmail.com>
+Date:   Mon Dec 7 00:30:58 2015 +0100
+
+    I18n: Update translation tr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 40734a2b40e86806c1d42c38777c577fed328a26
+Author: Matias Wilkman <matias.wilkman@gmail.com>
+Date:   Mon Nov 30 22:03:49 2015 +0100
+
+    activate delay spinner for region mode (bug #12336)
+
+commit 575c44482b9460b0077c7d65a4d4406d305e9912
+Author: Landry Breuil <landry@xfce.org>
+Date:   Mon Nov 30 21:54:24 2015 +0100
+
+    remove trailing space
+
+commit 6cacb545cd814f766f4946de1f23da7115778ab5
+Author: Matias Wilkman <matias.wilkman@gmail.com>
+Date:   Tue Nov 24 05:13:23 2015 +0200
+
+    enable delay in region mode
+
+commit 38f1d093099d700c02901922b40d878e8e3148b7
+Author: Matias Wilkman <matias.wilkman@gmail.com>
+Date:   Sat Nov 28 22:06:39 2015 +0200
+
+    allow delay of 0 (who's got a spare second these days?)
+
+commit c26a7f05537488dd3ed3e4b069bed56d0815322b
+Author: Matias Wilkman <matias.wilkman@gmail.com>
+Date:   Sat Nov 28 21:59:29 2015 +0200
+
+    fixed gray overlay in region mode screenshots (bug #11922)
+
+commit eb14f11d452cd29521b4b82acdbaeca009ff9cb8
+Author: Sergey Alyoshin <alyoshin.s@gmail.com>
+Date:   Sat Nov 28 12:31:07 2015 +0100
+
+    I18n: Update translation ru (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 57a9a18c37875b6aa3ffed0c41b7ad32304ee24f
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Nov 27 00:31:46 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1fea16f87107f791dbd9eaa61c72d944e86cdc53
+Author: abuyop <abuyop@gmail.com>
+Date:   Fri Nov 20 18:30:46 2015 +0100
+
+    I18n: Update translation ms (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 235dbd26f673079f952545cd30764fb5718749be
+Author: 白铭骢 <jeffbai@aosc.xyz>
+Date:   Mon Nov 16 00:31:06 2015 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 47555765b47cf12522b0056217d3dfaf4d2a8084
+Author: Piotr Sokół <psokol@jabster.pl>
+Date:   Sun Nov 15 18:31:06 2015 +0100
+
+    I18n: Update translation pl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 05806c53f01fa39508a335c21d28e57bd5cff685
+Author: Yarema aka Knedlyk <yupadmin@gmail.com>
+Date:   Sun Nov 15 00:31:45 2015 +0100
+
+    I18n: Update translation uk (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 15b6efa6d18a7229ce8e7815305ea600bc46c624
+Author: Morten Juhl-Johansen Zölde-Fejér <morten@writtenandread.net>
+Date:   Tue Nov 10 00:31:16 2015 +0100
+
+    I18n: Update translation da (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6e2708fe974742418641a20c646ff9d3c3e76530
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Mon Nov 9 12:30:48 2015 +0100
+
+    I18n: Update translation zh_CN (98%).
+    
+    80 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 3d0f831b57876d5001c2aa10dbebe0489dde7d6a
+Author: Michael Findlay <translate@cobber-linux.org>
+Date:   Mon Nov 9 06:30:49 2015 +0100
+
+    I18n: Update translation en_AU (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit d94b5ba7ce7f6c9584dbd64f3fb1ad99aa97e844
+Author: Pjotr <pjotrvertaalt@gmail.com>
+Date:   Thu Nov 5 00:30:47 2015 +0100
+
+    I18n: Update translation nl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 764fc0db9eee92997765b351e4e9e884d8c4d3f6
+Author: André Miranda <andreldm1989@gmail.com>
+Date:   Tue Nov 3 18:30:50 2015 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 47a63734b3aaf8dd2572e986cbd61126ad65d9f8
+Author: Seong-ho Cho <darkcircle.0426@gmail.com>
+Date:   Tue Nov 3 00:30:48 2015 +0100
+
+    I18n: Update translation ko (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit da22484a33ec090b14f0134b527332b7551b655b
+Author: Petr Šimáček <petr.simacek@gmail.com>
+Date:   Mon Nov 2 12:31:46 2015 +0100
+
+    I18n: Update translation cs (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0117450eaad2603e9bdcff43f49dd4b541677c77
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Nov 2 00:31:02 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f9de863855dfe2c39e0a53cfe0f946fddcedddd1
+Author: Manolo Díaz <diaz.manolo@gmail.com>
+Date:   Mon Nov 2 00:31:02 2015 +0100
+
+    I18n: Update translation es (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit aece893f96857c7b802eb53c4c709845e9827655
+Author: Tobias Bannert <tobannert@gmail.com>
+Date:   Mon Nov 2 00:31:02 2015 +0100
+
+    I18n: Update translation de (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ce1f730ac9f72627b198cebbf1d12f0011e92cb7
+Author: Landry Breuil <landry@rhaalovely.net>
+Date:   Sun Nov 1 10:23:56 2015 +0100
+
+    Use while instead of when in strings (bug #12157)
+
+commit a04b60c39dbc3c179e4098ca255ee6c63ab0d6eb
+Author: Jackie Huang <jackie.huang@windriver.com>
+Date:   Mon Sep 21 06:54:28 2015 +0000
+
+    Makefile.am: create ouput directory for desktop file
+    
+    Signed-off-by: Jackie Huang <jackie.huang@windriver.com>
+
+commit e37479e5e7ded7556a45d6ad8d1ba3178f9c7be1
+Author: Slavko <linux@slavino.sk>
+Date:   Fri Oct 30 12:32:18 2015 +0100
+
+    I18n: Update translation sk (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6de6b7e2faec6b4f349be1819450d4f97d624110
+Author: Flo <flo.xfce@gmx-topmail.de>
+Date:   Mon Oct 19 20:38:18 2015 +0200
+
+    Fix crash in GValueArray handling (#11879)
+
+commit 64a78032c3e36fee9a721e75d62a5d19ddbe9293
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Sep 21 00:31:45 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 49c41116fb2262ad54ae29d9939f1a8244ee6d3f
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Thu Aug 20 18:30:46 2015 +0200
+
+    I18n: Update translation he (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4d4d88d8612dc3780f9f277b9e88d92b426f1d2e
+Author: عبدالله رضوان <abbodmar@gmail.com>
+Date:   Sat Aug 8 00:31:31 2015 +0200
+
+    I18n: Update translation ar (81%).
+    
+    66 translated messages, 15 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 0ef62f43e612389e4b950f35216702532ef4cccf
+Author: GenghisKhan <genghiskhan@gmx.ca>
+Date:   Fri Jul 31 12:31:07 2015 +0200
+
+    I18n: Add new translation he (61%).
+    
+    50 translated messages, 31 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit ee7f6ff6052c0935de658aa859b035e945864fa3
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Jul 21 18:31:39 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e53e83b907ff129cd1aa0a2074b4ac758aff00ee
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Mon Jul 20 00:33:09 2015 +0200
+
+    I18n: Update translation sv (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 28d85e03070e87f0e70be81d71c17d88853ba348
+Author: Michael Findlay <keltoiboy@gmail.com>
+Date:   Thu Jun 11 12:31:35 2015 +0200
+
+    I18n: Update translation en_AU (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 2006a8659d660ecebd065dc414e71804ed2daa3c
+Author: Påvel Nicklasson <pavelnicklasson@bahnhof.se>
+Date:   Wed Jun 3 18:33:15 2015 +0200
+
+    I18n: Update translation sv (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1c462a075f194c85a483db1db2bbccdb89af64ac
+Author: Flo <flo.xfce@gmx-topmail.de>
+Date:   Sun Apr 26 11:27:03 2015 +0200
+
+    Port from deprecated GValueArray to GArray
+
+commit f7c125c4404bfa33923d7512ebc42468e35c2921
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Apr 10 00:31:30 2015 +0200
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 64191935d9cd199f6be47b0b8cd59e085d9cb06f
+Author: Urien Desterres <urien.desterres@gmail.com>
+Date:   Sat Apr 4 12:31:20 2015 +0200
+
+    I18n: Update translation fr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4ce3eaac26d86277327f43dde966aeb412bdb777
+Author: Anonymous <noreply@xfce.org>
+Date:   Tue Mar 17 00:31:13 2015 +0100
+
+    I18n: Update translation lt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit efcb79dededcb0fa721ff2287fa803740cf52ae0
+Author: Anonymous <noreply@xfce.org>
+Date:   Thu Mar 12 18:31:08 2015 +0100
+
+    I18n: Update translation lt (77%).
+    
+    63 translated messages, 18 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit a69f279c071178b0d599b7f78f21ab7bc82c2256
+Author: Piotr Strębski <strebski@o2.pl>
+Date:   Thu Mar 5 12:31:42 2015 +0100
+
+    I18n: Update translation pl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b36c6098afb8264d3414c00b4cd628fed942a628
+Author: abuyop <abuyop@gmail.com>
+Date:   Tue Mar 3 00:31:18 2015 +0100
+
+    I18n: Update translation ms (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bea997d3df555a6562dbe74de6109664cbaf8381
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Thu Feb 26 18:32:31 2015 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit baf054447d02d25c4619e9c700e1d227bcea8eee
+Author: Slavko <linux@slavino.sk>
+Date:   Thu Feb 26 18:32:31 2015 +0100
+
+    I18n: Update translation sk (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c5e83298943899018f85447e09926ecab68e4caa
+Author: Pasi Lallinaho <pasi@shimmerproject.org>
+Date:   Thu Feb 26 06:31:21 2015 +0100
+
+    I18n: Update translation fi (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1a98a0384c8a6ad55a152b653da3699af4e60e46
+Author: Pasi Lallinaho <pasi@shimmerproject.org>
+Date:   Thu Feb 26 00:31:48 2015 +0100
+
+    I18n: Update translation fi (98%).
+    
+    80 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7f7fbcee16950eec2aebddcade00055e8ef7a324
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Wed Feb 25 06:31:02 2015 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit cbf542bd23fda9b24034dc5032b9a91592cd82cf
+Author: Manolo Díaz <diaz.manolo@gmail.com>
+Date:   Wed Feb 25 00:31:30 2015 +0100
+
+    I18n: Update translation es (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7410d0998dbde284254119ef9f3f782cb0f930e3
+Author: Nuno Miguel <nunomgue@gmail.com>
+Date:   Mon Feb 23 00:31:42 2015 +0100
+
+    I18n: Update translation pt (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5c165ad370d3c7367a4fe87510b7903e9309cfce
+Author: Nuno Miguel <nunomgue@gmail.com>
+Date:   Sun Feb 22 18:31:35 2015 +0100
+
+    I18n: Update translation pt (90%).
+    
+    73 translated messages, 8 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fa37a7320ae7d3156d19b970ee4395adf76c5a24
+Author: Georg Eckert <eckert.georg@gmx.de>
+Date:   Sun Feb 22 00:31:36 2015 +0100
+
+    I18n: Update translation de (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5ef01e3d94066101a4a2a3c3e5dd252bc62d80d5
+Author: Allan Nordhøy <comradekingu@gmail.com>
+Date:   Sat Feb 21 18:32:09 2015 +0100
+
+    I18n: Update translation nb (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4d3664509a57b48bfef91d2c6e7ca91ce358daf5
+Author: enolp <enolp@softastur.org>
+Date:   Sat Feb 21 18:32:09 2015 +0100
+
+    I18n: Update translation ast (98%).
+    
+    80 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 101e9d9f6ef101be296d0f09552c5fe84303aa2c
+Author: Michal Várady <miko.vaji@gmail.com>
+Date:   Sat Feb 21 06:31:28 2015 +0100
+
+    I18n: Update translation cs (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1ba8ef6210e9f1e2d963c22e2e118d585bd97930
+Author: enolp <enolp@softastur.org>
+Date:   Thu Feb 19 06:31:37 2015 +0100
+
+    I18n: Update translation ast (71%).
+    
+    58 translated messages, 23 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 62b284e59309007de8d53970aa986df2becf3720
+Author: Masato HASHIMOTO <cabezon.hashimoto@gmail.com>
+Date:   Wed Feb 18 18:31:33 2015 +0100
+
+    I18n: Update translation ja (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit daccb23403baf5ab8d7a82cdf084a1dbbaf9d913
+Author: Natavan Mirzayeva <mirzayevanatavan@gmail.com>
+Date:   Tue Feb 17 18:32:24 2015 +0100
+
+    I18n: Update translation tr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 8fbe37aca638fed4985ec2808617dc0aef33bf06
+Author: Cristian Marchi <cri.penta@gmail.com>
+Date:   Sun Feb 15 18:31:19 2015 +0100
+
+    I18n: Update translation it (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 7f0eb84a9638a66317883a754b17b46702044f94
+Author: Yarema aka Knedlyk <yupadmin@gmail.com>
+Date:   Sat Feb 14 18:31:31 2015 +0100
+
+    I18n: Update translation uk (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b11ad58661df0e854d2690d0e24ca2f7bf185471
+Author: Anonymous <noreply@xfce.org>
+Date:   Sat Feb 14 18:31:31 2015 +0100
+
+    I18n: Update translation sl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 187029b6d15d51714a226e73dc7dde7d8313e59a
+Author: Dawid <hoek@hoek.pl>
+Date:   Sat Feb 14 18:31:31 2015 +0100
+
+    I18n: Update translation pl (98%).
+    
+    80 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit c8059d365a99cc44b13ea3d1ef6aeba86942731a
+Author: Seong-ho Cho <darkcircle.0426@gmail.com>
+Date:   Sat Feb 14 18:31:31 2015 +0100
+
+    I18n: Update translation ko (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit f3aefd5f31e927d100d35c037a212ae5c7a652e0
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Sat Feb 14 00:31:08 2015 +0100
+
+    I18n: Update translation sr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit bfcfc1cc3220b6a2047a7ea949906a9c0bbf6081
+Author: Sergey Alyoshin <alyoshin.s@gmail.com>
+Date:   Sat Feb 14 00:31:08 2015 +0100
+
+    I18n: Update translation ru (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 1d2b89c54e59be3784493006353a4387a8fb5ca6
+Author: Theppitak Karoonboonyanan <theppitak@gmail.com>
+Date:   Fri Feb 13 12:31:14 2015 +0100
+
+    I18n: Update translation th (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fe0c6fe3806957f9a1bee1940efcbab7c70a117f
+Author: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>
+Date:   Fri Feb 13 06:31:00 2015 +0100
+
+    I18n: Update translation es (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 6c00a2445ee8f718ebd15666a5c2f8e9724ea1e2
+Author: Anonymous <noreply@xfce.org>
+Date:   Fri Feb 13 00:31:06 2015 +0100
+
+    I18n: Update translation sl (92%).
+    
+    75 translated messages, 6 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit e63a79c3f464d66c44bf36b17c0d8aeb1cb6444e
+Author: André Miranda <andreldm1989@gmail.com>
+Date:   Fri Feb 13 00:31:06 2015 +0100
+
+    I18n: Update translation pt_BR (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit be99a06332e49135ad305b9d3f8f5f64f798bae1
+Author: Pjotr <pjotrvertaalt@gmail.com>
+Date:   Thu Feb 12 18:31:06 2015 +0100
+
+    I18n: Update translation nl (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit af52dfd3ddc1fc2bca8007c8fba548485b73605f
+Author: Edin Veskovic <edin.veskovic@openmailbox.org>
+Date:   Thu Feb 12 12:31:15 2015 +0100
+
+    I18n: Update translation hr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit acd1449e0b109bcdd4e21118f68d0ce16d3419c4
+Author: Urien Desterres <urien.desterres@gmail.com>
+Date:   Thu Feb 12 12:31:15 2015 +0100
+
+    I18n: Update translation fr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 78e0ae665e84bce6f49d1e77e3b372492144019a
+Author: Kiril Kirilov <cybercop_montana@abv.bg>
+Date:   Thu Feb 12 12:31:15 2015 +0100
+
+    I18n: Update translation bg (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit fe0663c50ae23098a2bba08c774f3c1081b6e83b
+Merge: f840ac3 a124c08
+Author: Landry Breuil <landry@xfce.org>
+Date:   Wed Feb 11 21:17:36 2015 +0100
+
+    Merge branch 'master' of git://git.xfce.org/apps/xfce4-screenshooter
+
+commit f840ac382758d88403fe46af97e8d340e2807007
+Author: Landry Breuil <landry@xfce.org>
+Date:   Wed Feb 11 21:17:33 2015 +0100
+
+    Fix description to please appstream-util validate-relax
+
+commit a124c087ae0a692229145067463d40c07af1c689
+Author: 玉堂白鹤 <yjwork@qq.com>
+Date:   Tue Feb 10 12:31:03 2015 +0100
+
+    I18n: Update translation zh_CN (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 21995fb0918bed4b803ee33776a719ed19ba2fe0
+Author: 周潇波 <zhouxiaobo.500@gmail.com>
+Date:   Mon Feb 9 18:31:25 2015 +0100
+
+    I18n: Update translation zh_CN (87%).
+    
+    71 translated messages, 10 untranslated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 27bc42e843b94e4a9e7b32fee93eea9af078c4c1
+Author: Sergey Alyoshin <alyoshin.s@gmail.com>
+Date:   Sun Feb 8 18:31:48 2015 +0100
+
+    I18n: Update translation ru (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b29d2caf632a709e44c854537a0679f77d76e36a
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Thu Jan 29 18:31:06 2015 +0100
+
+    I18n: Update translation sr (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 5102325fd42230ed2e551dcdc58abaeee3dd3257
+Author: Kiril Kirilov <cybercop_montana@abv.bg>
+Date:   Mon Jan 26 18:31:03 2015 +0100
+
+    I18n: Update translation bg (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit b2e32666a81a96fa90ec40983ba51fdeb91a8438
+Author: Pablo Roberto Francisco Lezaeta Reyes <prflr88@gmail.com>
+Date:   Mon Jan 26 06:31:03 2015 +0100
+
+    I18n: Update translation es (100%).
+    
+    81 translated messages.
+    
+    Transifex (https://www.transifex.com/projects/p/xfce/).
+
+commit 4a98b70642a91e09def1f5da8f4ae0b1cdeb53f0
+Author: Landry Breuil <landry@xfce.org>
+Date:   Sun Jan 25 10:00:02 2015 +0100
+
+    updates for 1.8.2
+
 commit fd138104a5e6e84b521d9d32b07c03f3994b54d9
 Author: Adam Stachowicz <saibamenppl@gmail.com>
 Date:   Thu Jan 15 18:31:15 2015 +0100
@@ -5566,7 +7162,7 @@ Date:   Thu Aug 13 23:50:47 2009 +0200
     
     Conflicts:
     
-    	ChangeLog
+            ChangeLog
 
 commit dccab28ced61f3d410f0d244ae6236d590641457
 Author: Jérôme Guelfucci <jeromeg@xfce.org>
@@ -5633,7 +7229,7 @@ Date:   Sat Jul 25 10:36:02 2009 +0000
 
     2009-07-25  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation updated.
+            * hu.po: Translation updated.
     
     (Old svn revision: 7833)
 
@@ -5810,7 +7406,7 @@ Date:   Sat Jun 13 16:36:58 2009 +0000
 
     2009-06-13  Gabor Kelemen  <kelemeng@gnome.hu>
     
-    	* hu.po: Translation reworked.
+            * hu.po: Translation reworked.
     
     
     (Old svn revision: 7556)
@@ -5977,7 +7573,7 @@ commit 9292547a8ae15e92382c04670cfd4283c08d58d5
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Thu Jun 4 11:38:45 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 7456)
 
@@ -6153,8 +7749,8 @@ commit ac96451727976054f1adbbbf919b62544dfd1a76
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 23 16:25:42 2009 +0000
 
-    	* Only build the ZimageZ stuff if the dependencies are
-    	  installed. Makes libcurl and xmlrpc-c optional.
+            * Only build the ZimageZ stuff if the dependencies are
+              installed. Makes libcurl and xmlrpc-c optional.
     
     
     (Old svn revision: 7397)
@@ -6163,8 +7759,8 @@ commit 7cb8a37e0fe7e49f6b8874c4db999a12ed4a6a4f
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 23 12:54:03 2009 +0000
 
-    	* configure.ac.in: check for libcurl, it is needed by the
-    	  xmlrpc-c stuff.
+            * configure.ac.in: check for libcurl, it is needed by the
+              xmlrpc-c stuff.
     
     
     (Old svn revision: 7395)
@@ -6173,9 +7769,9 @@ commit a6076392ac5fcd3424bd8fa0dc0cd4239a47b85f
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 23 12:45:13 2009 +0000
 
-    	* src/main.c:
-    	  - save the last user when we are in CLI.
-    		- free the last user when exiting.
+            * src/main.c:
+              - save the last user when we are in CLI.
+                    - free the last user when exiting.
     
     
     (Old svn revision: 7394)
@@ -6184,8 +7780,8 @@ commit cfa8a0031f47bf788cf0923fc4ddfaae89b2742b
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 23 11:21:04 2009 +0000
 
-    	* lib/screenshooter-zimage.c: check if one of the fields is
-    	  empty, not only the last one...
+            * lib/screenshooter-zimage.c: check if one of the fields is
+              empty, not only the last one...
     
     
     (Old svn revision: 7393)
@@ -6194,12 +7790,12 @@ commit 5c4b63da77ad6bea614d11b92bd0f681855a23da
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 23 11:16:23 2009 +0000
 
-    	* lib/screenshooter-zimage.c, try to fix the last user issue:
-    	  - set the user as data of the job.
-    		- give the string and not a pointer to the string to the job.
-    		- only accept valid utf8 strings as users.
-    		- update the last user in (cb_image_uploaded).
-    	* TODO: update the todo list.
+            * lib/screenshooter-zimage.c, try to fix the last user issue:
+              - set the user as data of the job.
+                    - give the string and not a pointer to the string to the job.
+                    - only accept valid utf8 strings as users.
+                    - update the last user in (cb_image_uploaded).
+            * TODO: update the todo list.
     
     
     (Old svn revision: 7392)
@@ -6216,10 +7812,10 @@ commit c72245e950b135943d221a2e4af08ddefe91534e
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Thu May 21 10:34:08 2009 +0000
 
-    	* lib/sexy-url-label.{c,h}: mark some strings as translatable and
-    	  include the libxfce4util header to have the "_" translation
-    		function.
-    	* po/POTFILES.in: add the new translatable files.
+            * lib/sexy-url-label.{c,h}: mark some strings as translatable and
+              include the libxfce4util header to have the "_" translation
+                    function.
+            * po/POTFILES.in: add the new translatable files.
     
     
     (Old svn revision: 7384)
@@ -6228,13 +7824,13 @@ commit 08cf214c89c21915ca1af79a8340476dfed4f799
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Thu May 21 10:21:48 2009 +0000
 
-    	* lib/screenshooter-zimagez.c:
-    	  - remove (open_zimagez_link) and use (open_url_hook) in all
-    		  cases.
-    		- (cb_image_uploaded) improve the dialog by using SexyUrl labels
-    		  instead of link buttons and by showing two usage examples, in
-    			HTML and in BB code.
-    		- (cb_image_uploaded) use constants for all strings.
+            * lib/screenshooter-zimagez.c:
+              - remove (open_zimagez_link) and use (open_url_hook) in all
+                      cases.
+                    - (cb_image_uploaded) improve the dialog by using SexyUrl labels
+                      instead of link buttons and by showing two usage examples, in
+                            HTML and in BB code.
+                    - (cb_image_uploaded) use constants for all strings.
     
     
     
@@ -6244,9 +7840,9 @@ commit 7b488ad04406884f2e9eb77acd1bfbc2bbf68977
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 18 21:24:31 2009 +0000
 
-    	* Improve the status dialog of the upload to ZimageZ.
-    	* Remember the last ZimageZ user name and put it in the user field
-    	  when displaying the dialog for the first time.
+            * Improve the status dialog of the upload to ZimageZ.
+            * Remember the last ZimageZ user name and put it in the user field
+              when displaying the dialog for the first time.
     
     
     (Old svn revision: 7367)
@@ -6255,11 +7851,11 @@ commit 79f20969988603ee024f64e4153e7755a6091e49
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 18 12:46:48 2009 +0000
 
-    	* lib/screenshooter-dialogs.c:
-    	  - (screenshooter_dialog_new) add a radio button for uploading in the
-    	    actions. Indent some comments correctly.
-    	  - (cb_zimagez_toggled) add a callback for the radio button.
-    	  - remove some useless comments.
+            * lib/screenshooter-dialogs.c:
+              - (screenshooter_dialog_new) add a radio button for uploading in the
+                actions. Indent some comments correctly.
+              - (cb_zimagez_toggled) add a callback for the radio button.
+              - remove some useless comments.
     
     
     (Old svn revision: 7362)
@@ -6268,21 +7864,21 @@ commit 89d075862ef09c1cdfda4076fead690786424d93
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 18 12:03:14 2009 +0000
 
-    	* lib/screenshooter-global.h: add a cli gboolean to the ScreenshotData
-    	  structure. Combined with the close member of the structure, this
-    	  allows to close the application or not depending on how the
-    	  executable is called.
-    	* src/main.c, lib/screenshooter-actions.{c,h}: move the dialog
-    	  stuff to (screenshooter_take_and_output_screenshot) which is
-    	  from now on a GSourceFunc. It returns TRUE if we want to take
-    	  another screenshot, else it quits the main loop and returns
-    	  FALSE. It is called via g_idle_add in (main), which allows us
-    	  to always have a main loop. The workaround consisting in
-    	  sleep (1) before taking a screenshot seems useless now.
-    	* lib/screenshooter-zimagez.c: don't start and exit a main
-    	  loop here, run the dialog instead of showing it.
-    	* panel-plugin/screenshooter-plugin.c: set the cli member of the
-    	  structure to false when initializing the plugin.
+            * lib/screenshooter-global.h: add a cli gboolean to the ScreenshotData
+              structure. Combined with the close member of the structure, this
+              allows to close the application or not depending on how the
+              executable is called.
+            * src/main.c, lib/screenshooter-actions.{c,h}: move the dialog
+              stuff to (screenshooter_take_and_output_screenshot) which is
+              from now on a GSourceFunc. It returns TRUE if we want to take
+              another screenshot, else it quits the main loop and returns
+              FALSE. It is called via g_idle_add in (main), which allows us
+              to always have a main loop. The workaround consisting in
+              sleep (1) before taking a screenshot seems useless now.
+            * lib/screenshooter-zimagez.c: don't start and exit a main
+              loop here, run the dialog instead of showing it.
+            * panel-plugin/screenshooter-plugin.c: set the cli member of the
+              structure to false when initializing the plugin.
     
     
     (Old svn revision: 7361)
@@ -6291,10 +7887,10 @@ commit f9d29e8207b1b4d2f340a79b319928fe9b452163
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 18 08:12:33 2009 +0000
 
-    	* lib/screenshooter-utils.c (screenshooter_error),
-    	  lib/screenshooter-job.c (screenshooter_job_ask_info):
-    	  do not initialize va_list to NULL, that's wrong and useless.
-    	  Thanks to Enrico Tröger.
+            * lib/screenshooter-utils.c (screenshooter_error),
+              lib/screenshooter-job.c (screenshooter_job_ask_info):
+              do not initialize va_list to NULL, that's wrong and useless.
+              Thanks to Enrico Tröger.
     
     
     (Old svn revision: 7360)
@@ -6303,10 +7899,10 @@ commit aca1a435e45b146e2686eaa7772bb4d677787c6e
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sun May 17 16:22:32 2009 +0000
 
-    	* lib/screenshooter-zimagez.c:
-    	  - (zimagez_upload_job) remove a useless cancel check before the loop.
-    	  - (cb_ask_for_information) do not disconnect handlers before
-    	    cancelling the job, only before destroying it.
+            * lib/screenshooter-zimagez.c:
+              - (zimagez_upload_job) remove a useless cancel check before the loop.
+              - (cb_ask_for_information) do not disconnect handlers before
+                cancelling the job, only before destroying it.
     
     
     (Old svn revision: 7358)
@@ -6315,11 +7911,11 @@ commit 9515ffa68440af9be2d65f06e9e77223c1f6fd8a
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sun May 17 15:56:41 2009 +0000
 
-    	* lib/screenshooter-utils.{c,h}: use a constant in
-    	  (screenshooter_read_rc_file) and (screenshooter_write_rc_file).
-    	* src/main.c:
-    	  - use a constant for the rc file.
-    	  - don't save the preferences in the callback but in (main).
+            * lib/screenshooter-utils.{c,h}: use a constant in
+              (screenshooter_read_rc_file) and (screenshooter_write_rc_file).
+            * src/main.c:
+              - use a constant for the rc file.
+              - don't save the preferences in the callback but in (main).
     
     
     (Old svn revision: 7356)
@@ -6328,14 +7924,14 @@ commit 79f58112290b2a6168976c62f6372325f46e8fe4
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 16 21:47:18 2009 +0000
 
-    	* src/screenshooter-utils.{c,h}: add (screenshooter_error) which shows
-    	  an error using a GtkMessageDialog.
-    	* lib/*, panel-plugin/screenshooter-plugin.c, src/main.c:
-    	  - use (screenshooter_error) instead of (xfce_err).
-    	  - remove some trailing white spaces.
-    	* lib/screenshooter-job.c (screenshooter_job_ask_info): add a missing return,
-    	  when the job has been cancelled.
-    	* TODO: updated.
+            * src/screenshooter-utils.{c,h}: add (screenshooter_error) which shows
+              an error using a GtkMessageDialog.
+            * lib/*, panel-plugin/screenshooter-plugin.c, src/main.c:
+              - use (screenshooter_error) instead of (xfce_err).
+              - remove some trailing white spaces.
+            * lib/screenshooter-job.c (screenshooter_job_ask_info): add a missing return,
+              when the job has been cancelled.
+            * TODO: updated.
     
     
     (Old svn revision: 7352)
@@ -6344,25 +7940,25 @@ commit 19b447e29b040f6d3797571f630e6571049b828e
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Fri May 15 16:23:26 2009 +0000
 
-    	* src/main.c:
-    	  - add the glib and stdlib headers.
-    	  - use RETURN_SUCCESS and RETURN_FAILURE instead of 0 and 1.
-    	* lib/exo-simple-job.{c,h}, lib/exo-job.{c,h}: take the job framework
-    	  from Exo written by Jannis Pohlmann. Thank you Jannis!
-    	* lib/screenshooter-job.{c,h}, lib/screenshooter-simple-job.{c,h}:
-    	  ScreenshooterJob is based on ExoJob, it provides to additional signals,
-    	  ask and image-uploaded.
-    	* lib/screenshooter-marshal.list: add some marshallers for the new
-    	  signals.
-    	* lib/screenshooter-zimagez.{c,h}: port the existing code to use a
-    	  ScreenshooterJob. Thanks to Jannis for his great help! This fixes
-    	  a bunch of problems that occured with the previous implementation.
-    	  The dialogs still need to be polished.
-    	* lib/screenshooter-actions.c: use the new function.
-    	* lib/Makefile.am:
-    	  - add some magic to generate the marshallers.
-    	  - sort the source files by alphabetical order.
-    	* configure.ac.in: bump the GThreads required version to 2.16.
+            * src/main.c:
+              - add the glib and stdlib headers.
+              - use RETURN_SUCCESS and RETURN_FAILURE instead of 0 and 1.
+            * lib/exo-simple-job.{c,h}, lib/exo-job.{c,h}: take the job framework
+              from Exo written by Jannis Pohlmann. Thank you Jannis!
+            * lib/screenshooter-job.{c,h}, lib/screenshooter-simple-job.{c,h}:
+              ScreenshooterJob is based on ExoJob, it provides to additional signals,
+              ask and image-uploaded.
+            * lib/screenshooter-marshal.list: add some marshallers for the new
+              signals.
+            * lib/screenshooter-zimagez.{c,h}: port the existing code to use a
+              ScreenshooterJob. Thanks to Jannis for his great help! This fixes
+              a bunch of problems that occured with the previous implementation.
+              The dialogs still need to be polished.
+            * lib/screenshooter-actions.c: use the new function.
+            * lib/Makefile.am:
+              - add some magic to generate the marshallers.
+              - sort the source files by alphabetical order.
+            * configure.ac.in: bump the GThreads required version to 2.16.
     
     
     
@@ -6380,7 +7976,7 @@ commit 7df717ff8566bb5d2198fc58396d498c47a39c9c
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Tue May 5 08:22:37 2009 +0000
 
-    	* lib/screenshooter-zimagez.c: make the dialog unresizable and destroy
+            * lib/screenshooter-zimagez.c: make the dialog unresizable and destroy
               it when we are done. Remove useless blank spaces.
     
     
@@ -6391,14 +7987,14 @@ commit 96c5c055bab815cef0e005defbe9f58c72e8b7cf
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 4 14:54:59 2009 +0000
 
-    	* lib/sexy-url-label.{c,h}: add the sexy_url_label taken from
-    	  libsexy.
-    	* lib/screenshooter-zimagez.{c,h}:
-    	  - add a link to ZimageZ so that users can create an account easily.
-    	  - add tooltips for the different entries.
-    	  - if one of the fiels is empty when the dialog is validated, show it
+            * lib/sexy-url-label.{c,h}: add the sexy_url_label taken from
+              libsexy.
+            * lib/screenshooter-zimagez.{c,h}:
+              - add a link to ZimageZ so that users can create an account easily.
+              - add tooltips for the different entries.
+              - if one of the fiels is empty when the dialog is validated, show it
                 again and ask the user to fill all the fields.
-    	  - plug some leaks and fix a double free issue.
+              - plug some leaks and fix a double free issue.
     
     
     (Old svn revision: 7312)
@@ -6407,16 +8003,16 @@ commit d85e90240963f3239945f18e2146812dd8f0114c
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 4 11:13:35 2009 +0000
 
-    	* lib/screenshooter-zimagez.c:
-    	  - (screenshooter_upload_to_zimagez):
-    	    + use a GtkTable to improve the layout.
-    	    + add a cancel button to the dialog.
-    	    + display a warning if the password/user name was not correct
-    	      when respawning the dialog.
-    	    + make the labels left aligned and vertically centered to
-    	      improve the look of the dialog.
-    	    + tweak the layout by adding an alignment.
-    	  - (screenshooter_display_zimagez_links) document this function.
+            * lib/screenshooter-zimagez.c:
+              - (screenshooter_upload_to_zimagez):
+                + use a GtkTable to improve the layout.
+                + add a cancel button to the dialog.
+                + display a warning if the password/user name was not correct
+                  when respawning the dialog.
+                + make the labels left aligned and vertically centered to
+                  improve the look of the dialog.
+                + tweak the layout by adding an alignment.
+              - (screenshooter_display_zimagez_links) document this function.
     
     
     (Old svn revision: 7311)
@@ -6425,8 +8021,8 @@ commit 84bfd019e158ba0f32a4780ad86e92f6481a4b3b
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon May 4 09:05:16 2009 +0000
 
-    	* lib/screenshooter-zimagez.c: loop until the user has entered the
-    	  correct user/password couple.
+            * lib/screenshooter-zimagez.c: loop until the user has entered the
+              correct user/password couple.
     
     
     (Old svn revision: 7310)
@@ -6435,22 +8031,22 @@ commit a1ec7eb9412c4f6900b085ead0c3e0223d67c566
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat May 2 14:06:55 2009 +0000
 
-    	* lib/screenshooter-zimagez.{c,h}:
-    	  - (warn_if_fault_occurred) should be static.
-    	  - add some comments.
-    	  - (screenshooter_upload_to_zimagez) now returns a gchar* containing
-    	    the name of the uploaded image and NULL is the upload failed.
-    	  - (screenshooter_display_zimagez_links) new function which shows a
-    	    dialog to present the different links to the uploaded image. At
-    	    the moment, plain GtkLinkButtons are used, this still needs to be
-    	    improved.
-    	  - (open_url_hook) hook to open the links using xdg-open.
-    	* lib/screenshooter-actions.c:
-    	  - use constants where possible.
-    	  - use (screenshooter_display_zimagez_links) to display the result of
-    	    the upload.
-    	* lib/screenshooter-utils.{c,h}, lib/screenshooter-dialogs.{c,h}:
-    	  use constants where possible.:wq
+            * lib/screenshooter-zimagez.{c,h}:
+              - (warn_if_fault_occurred) should be static.
+              - add some comments.
+              - (screenshooter_upload_to_zimagez) now returns a gchar* containing
+                the name of the uploaded image and NULL is the upload failed.
+              - (screenshooter_display_zimagez_links) new function which shows a
+                dialog to present the different links to the uploaded image. At
+                the moment, plain GtkLinkButtons are used, this still needs to be
+                improved.
+              - (open_url_hook) hook to open the links using xdg-open.
+            * lib/screenshooter-actions.c:
+              - use constants where possible.
+              - use (screenshooter_display_zimagez_links) to display the result of
+                the upload.
+            * lib/screenshooter-utils.{c,h}, lib/screenshooter-dialogs.{c,h}:
+              use constants where possible.:wq
     
     
     
@@ -6462,33 +8058,33 @@ Date:   Fri May 1 08:22:48 2009 +0000
 
     2009-05-01 jeromeg
     
-    	This still needs a lot of polishment, but let's make things public.
+            This still needs a lot of polishment, but let's make things public.
     
-    	* src/Makefile.am, panel-plugin/Makefile.am: change the linking order.
-    	* lib/screenshooter-zimagez.c:
-    	  - (warn_if_fault_occurred) to warn if an error occured during the XML
-    	    transaction.
-    	  - (screenshooter_upload_to_zimagez) to upload the screenshot. Still needs
-    	    a lot of polish, but at least it works.
-    	* TODO: updated.
+            * src/Makefile.am, panel-plugin/Makefile.am: change the linking order.
+            * lib/screenshooter-zimagez.c:
+              - (warn_if_fault_occurred) to warn if an error occured during the XML
+                transaction.
+              - (screenshooter_upload_to_zimagez) to upload the screenshot. Still needs
+                a lot of polish, but at least it works.
+            * TODO: updated.
     
     2009-04-19 jeromeg
     
-    	* src/main.c:
-    	  - sort the CLI options by alphabetical order.
-    	  - add an upload CLI option.
-    	  - add some G_LIKELY and G_UNLIKELY macros.
-    	* lib/screenshooter-actions.c:
-    	  - add some G_LIKELY and G_UNLIKELY macros.
-    	  - call the upload function when the user requested it.
-    	* lib/screenshooter-utils.{c,h}: add a (rot13) function to encode the
-    	  password before sending it.
-    	* lib/screenshooter-zimagez.{c,h}: two new files to support the upload
-    	  of screenshots to ZimageZ.com, a free Web hosting solution.
-    	* lib/screenshooter-global.h: add the upload option.
-    	* lib/Makefile.am: add the two new files to the source.
-    	* configure.ac.in: check for xmlrpc-c, this is a bit uggly, but xmlrpc-c
-    	  does not provide a .pc file...
+            * src/main.c:
+              - sort the CLI options by alphabetical order.
+              - add an upload CLI option.
+              - add some G_LIKELY and G_UNLIKELY macros.
+            * lib/screenshooter-actions.c:
+              - add some G_LIKELY and G_UNLIKELY macros.
+              - call the upload function when the user requested it.
+            * lib/screenshooter-utils.{c,h}: add a (rot13) function to encode the
+              password before sending it.
+            * lib/screenshooter-zimagez.{c,h}: two new files to support the upload
+              of screenshots to ZimageZ.com, a free Web hosting solution.
+            * lib/screenshooter-global.h: add the upload option.
+            * lib/Makefile.am: add the two new files to the source.
+            * configure.ac.in: check for xmlrpc-c, this is a bit uggly, but xmlrpc-c
+              does not provide a .pc file...
     
     
     
@@ -6506,12 +8102,12 @@ commit 0c5cadca931ead5823fb9706935c1cbe36d0e0ce
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sat Apr 18 10:26:18 2009 +0000
 
-    	* lib/screenshooter-utils.c: start to add G_LIKELY and G_UNLIKELY macros.
-    	* lib/screenshooter-dialogs.c:
-    	  - more indentation improvements.
-    	  - start to add G_LIKELY and G_UNLIKELY macros.
-    	* lib/screenshooter-capture.c: start to add G_LIKELY and G_UNLIKELY macros.
-    	* lib/screenshooter-capture.h: add the glib header.
+            * lib/screenshooter-utils.c: start to add G_LIKELY and G_UNLIKELY macros.
+            * lib/screenshooter-dialogs.c:
+              - more indentation improvements.
+              - start to add G_LIKELY and G_UNLIKELY macros.
+            * lib/screenshooter-capture.c: start to add G_LIKELY and G_UNLIKELY macros.
+            * lib/screenshooter-capture.h: add the glib header.
     
     
     (Old svn revision: 7226)
@@ -6520,13 +8116,13 @@ commit 513f8a28b774dfb0a644e40e36bbdd7ae56b7fe4
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Thu Apr 16 15:37:23 2009 +0000
 
-    	* lib/screenshooter-actions.c: minor indentation change.
-    	* lib/screenshooter-utils.c:
-    	  - minor indentation improvements.
-    	  - (screenshooter_read_rc_file) only get the home uri once.
-    	* lib/screenshooter-capture.c:
-    	  - minor indentation improvements.
-    	  - correctly document (screenshooter_take_screenshot).
+            * lib/screenshooter-actions.c: minor indentation change.
+            * lib/screenshooter-utils.c:
+              - minor indentation improvements.
+              - (screenshooter_read_rc_file) only get the home uri once.
+            * lib/screenshooter-capture.c:
+              - minor indentation improvements.
+              - correctly document (screenshooter_take_screenshot).
     
     
     (Old svn revision: 7218)
@@ -6545,19 +8141,19 @@ commit 6d790eac26b774f44356cef9d4e7784717ea79d8
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Thu Apr 16 11:21:00 2009 +0000
 
-    	* panel-plugin/screenshooter-plugin.c:
-    	  - remove the wrong XFCE_PANEL_PLUGIN_REGISTER_INTERNAL macro call,
-    	    the plugin is external.
-    	  - add (set_panel_button_tooltip) to simplify the code, this function
-    	    sets the tooltip according to the area to be captured.
-    	  - use g_spawn_command_line_async to laucnh the help window.
-    	  - improve the indentation in some places.
-    	* lib/screenshooter-utils.c:
-    	  - improve the indentation in some places.
-    	  - (screenshooter_open_screenshot):
-    	    + declare the variables at the beginning of the code block.
+            * panel-plugin/screenshooter-plugin.c:
+              - remove the wrong XFCE_PANEL_PLUGIN_REGISTER_INTERNAL macro call,
+                the plugin is external.
+              - add (set_panel_button_tooltip) to simplify the code, this function
+                sets the tooltip according to the area to be captured.
+              - use g_spawn_command_line_async to laucnh the help window.
+              - improve the indentation in some places.
+            * lib/screenshooter-utils.c:
+              - improve the indentation in some places.
+              - (screenshooter_open_screenshot):
+                + declare the variables at the beginning of the code block.
                 + use g_spawn_command_line_async to launch the applications.
-    	* lib/screenshooter-dialogs.c: improve the indentation.
+            * lib/screenshooter-dialogs.c: improve the indentation.
     
     
     (Old svn revision: 7216)
@@ -6590,10 +8186,10 @@ commit 2a4eceecdedab6d350f522269e168078607a55dd
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Mon Apr 13 11:40:26 2009 +0000
 
-    	* src/main.c:
-    	  - improve the indentation.
-    	  - use g_spawn_command_line_async to launch the help.
-    	* lib/screenshooter-capture.c: fix a typo.:wq
+            * src/main.c:
+              - improve the indentation.
+              - use g_spawn_command_line_async to launch the help.
+            * lib/screenshooter-capture.c: fix a typo.:wq
     
     
     (Old svn revision: 7176)
@@ -6602,14 +8198,14 @@ commit a36b88991d23d798879f55afaf7a55d053df115d
 Author: Jerome Guelfucci <jeromeg@xfce.org>
 Date:   Sun Apr 12 18:24:56 2009 +0000
 
-    	* xfce4-screenshooter.1: add the 'mouse' CLI option to the manpage.
-    	* lib/screenshooter-dialogs.c:
-    	  - improve the indentation in some places.
-    	  - use gtk_radio_button_new_with_label_from_widget to create the
-    	    radio buttons.
-    	  - add some missing tooltips.
-    	* lib/screenshooter-utils.h: remove a useless include.
-    	* lib/screenshooter-capture.h: add the missing unistd.h include.
+            * xfce4-screenshooter.1: add the 'mouse' CLI option to the manpage.
+            * lib/screenshooter-dialogs.c:
+              - improve the indentation in some places.
+              - use gtk_radio_button_new_with_label_from_widget to create the
+                radio buttons.
+              - add some missing tooltips.
+            * lib/screenshooter-utils.h: remove a useless include.
+            * lib/screenshooter-capture.h: add the missing unistd.h include.
     
     
     (Old svn revision: 7171)
@@ -7859,14 +9455,14 @@ Date:   Sat Apr 11 10:24:40 2009 +0000
     
     2008-07-05 jeromeg
     
-    	* src/*, po/POTFILES.in: bugfix, make filename translatable.
+            * src/*, po/POTFILES.in: bugfix, make filename translatable.
     
     2008-06-29 jeromeg
     
-    	* src/screenshooter-plugin.c:
-    	  - set better var names
-    	  - fix indentation
-    	  - partially comment the code
+            * src/screenshooter-plugin.c:
+              - set better var names
+              - fix indentation
+              - partially comment the code
     
     2008-06-27 jeromeg
     
@@ -7878,124 +9474,124 @@ Date:   Sat Apr 11 10:24:40 2009 +0000
     
     2008-06-27 jeromeg
     
-    	* src/Makefile.am: enable -Wall
-    	* src/{main.c, screenshooter-utils.{c,h}}: fix gcc warnings except one...
-    	* BUGFIX: fix infinite loop in generate_filename_for_uri !
+            * src/Makefile.am: enable -Wall
+            * src/{main.c, screenshooter-utils.{c,h}}: fix gcc warnings except one...
+            * BUGFIX: fix infinite loop in generate_filename_for_uri !
     
     2008-06-27 jeromeg
     
-    	* src/screenshooter-utils.c: clean generate_filename_for_uri using g_access.
+            * src/screenshooter-utils.c: clean generate_filename_for_uri using g_access.
     
     2008-06-20 09:19 jeromeg
     
-    	* NEWS: updated.
+            * NEWS: updated.
     
     2008-06-20 08:59 jeromeg
     
-    	* src/screenshooter-plugin.c: make labels bold and
-    	  aligned to the left.
-    	* po/:
-    	  - make update-po.
-    	  - update French translation.
+            * src/screenshooter-plugin.c: make labels bold and
+              aligned to the left.
+            * po/:
+              - make update-po.
+              - update French translation.
     
     2008-06-19 19:30 jeromeg
     
-    	* src/screenshooter-plugin.c:
-    	  - add a default save location to the preferences dialog.
-    	  - update the code to use this new default.
-    	* src/main.c: save screenshots in home by default.
-    	* po/: make update-po.
+            * src/screenshooter-plugin.c:
+              - add a default save location to the preferences dialog.
+              - update the code to use this new default.
+            * src/main.c: save screenshots in home by default.
+            * po/: make update-po.
     
     2008-06-19 16:46 jeromeg
     
-    	* po/:
-    	  - make update-po.
-    	  - updated French translation.
+            * po/:
+              - make update-po.
+              - updated French translation.
     
     2008-06-19 15:09 jeromeg
     
-    	* src/screenshooter-plugin.c:
-    	  - rewrite the preferences dialog
-    	  - change default delay to 0.
+            * src/screenshooter-plugin.c:
+              - rewrite the preferences dialog
+              - change default delay to 0.
     
     2008-06-18 18:12 jeromeg
     
-    	* src/screenshooter-plugin.c: remove some code that seems to
-    	  be useless.
-    	* NEWS: updated.
+            * src/screenshooter-plugin.c: remove some code that seems to
+              be useless.
+            * NEWS: updated.
     
     2008-06-18 17:08 jeromeg
     
-    	* src/xfce4-screenshooter.1: add manpage (thanks to Debian).
-    	* Makefile.am: install the manpage.
+            * src/xfce4-screenshooter.1: add manpage (thanks to Debian).
+            * Makefile.am: install the manpage.
     
     2008-06-17 21:50 jeromeg
     
-    	* src/screenshooter-utils.h: add unistd.h include to fix build
-    	  with gcc-4.3 (thanks to Lionel Le Folgoc).
+            * src/screenshooter-utils.h: add unistd.h include to fix build
+              with gcc-4.3 (thanks to Lionel Le Folgoc).
     
     2008-06-17 12:37 jeromeg
     
-    	* NEWS: update for new release.
-    	* configure.ac.in: remove svn tag.
+            * NEWS: update for new release.
+            * configure.ac.in: remove svn tag.
     
     2008-06-17 11:52 jeromeg
     
-    	* COPYING: added the GPL2 text.
-    	* autogen.sh, configure.ac.in:
-    	  - added some magic of sarts to have the svn versions generated.
-    	  - cleaned the versions stuff
+            * COPYING: added the GPL2 text.
+            * autogen.sh, configure.ac.in:
+              - added some magic of sarts to have the svn versions generated.
+              - cleaned the versions stuff
     
     2008-06-10 09:17 jeromeg
     
-    	* po/: update po files.
-    	* src/screenshooter.c: improve a string.
+            * po/: update po files.
+            * src/screenshooter.c: improve a string.
     
     2008-06-08 00:15 jeromeg
     
-    	* src/main.c: Add an executable with cli options to take
-    	  screenshots, thanks to Ristretto for the nice example !
-    	* Modify autotools, makefiles and locale files to
-    	  build it, thanks to Gauvain Pocentek.
-    	* src/screenshooter-utils.h: Add some headers to fix build warnings.
-    	* README: update with executable cli options
-    	* NEWS: update
+            * src/main.c: Add an executable with cli options to take
+              screenshots, thanks to Ristretto for the nice example !
+            * Modify autotools, makefiles and locale files to
+              build it, thanks to Gauvain Pocentek.
+            * src/screenshooter-utils.h: Add some headers to fix build warnings.
+            * README: update with executable cli options
+            * NEWS: update
     
     2008-06-06 19:19 jeromeg
     
-    	* Move the code to a src/ folder and remove the panel-plugin one.
-    	* src/screenshooter-utils.{c,h}: moved generic code here.
-    	* src/screenshooter.c: updated to use the generic code.
-    	* Update the makefiles and autotools to use new code structure.
+            * Move the code to a src/ folder and remove the panel-plugin one.
+            * src/screenshooter-utils.{c,h}: moved generic code here.
+            * src/screenshooter.c: updated to use the generic code.
+            * Update the makefiles and autotools to use new code structure.
     
     2008-06-06 15:35 jeromeg
     
-    	* panel-plugin/screenshooter.c:
-    	  - remove deprecated function.
-    	  - set button sensitive at the end of the screenshot procedure.
+            * panel-plugin/screenshooter.c:
+              - remove deprecated function.
+              - set button sensitive at the end of the screenshot procedure.
     
     2008-06-06 15:19 jeromeg
     
-    	* panel-plugin/screenshooter.c:
-    	  - new behaviour (fullscreen or active window screenshot).
-    	  - fix delay
-    	  - fix file saving (cancel now works, based on debian patch).
-    	  - button made insensitive while screenshot is taken.
-    	* configure.ac: added x11-proto-core to build deps.
-    	* README: updated.
+            * panel-plugin/screenshooter.c:
+              - new behaviour (fullscreen or active window screenshot).
+              - fix delay
+              - fix file saving (cancel now works, based on debian patch).
+              - button made insensitive while screenshot is taken.
+            * configure.ac: added x11-proto-core to build deps.
+            * README: updated.
     
     2008-05-18 18:25 mmassonnet
     
-    	* Fix GCC warnings and bug with delay (Patch from Jerome Guelfucci)
-    	* Drop automated file INSTALL
+            * Fix GCC warnings and bug with delay (Patch from Jerome Guelfucci)
+            * Drop automated file INSTALL
     
     2007-06-06 23:00 dbl
     
-    	* Fallback to Screenshot.png on "Cancel" (debbug#420242)
+            * Fallback to Screenshot.png on "Cancel" (debbug#420242)
     
     2006-09-11 18:51 nick
     
-    	* Apply Patch from Enrico Troger to enable i18n.
+            * Apply Patch from Enrico Troger to enable i18n.
     
     
     (Old svn revision: 7162)
@@ -8038,7 +9634,7 @@ commit 70ab07a23b99cf9fc1c0c51f254864c35ca228a6
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Mon Mar 30 20:30:11 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 7060)
 
@@ -8145,7 +9741,7 @@ commit be84fae87fe98ed9ee60d0d6a53b93a2a784e23e
 Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Sun Mar 22 16:37:55 2009 +0000
 
-    	* ChangLog: Cleanup (Masato Hashimoto)
+            * ChangLog: Cleanup (Masato Hashimoto)
     
     (Old svn revision: 6974)
 
@@ -8161,7 +9757,7 @@ commit 75afd2f645b2dada4b984912ccd404e18eeb1c45
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Sun Mar 22 08:17:48 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 6972)
 
@@ -8216,18 +9812,18 @@ commit 7295416205afc3515143918df09c9d1cbe1e89b5
 Author: Masato Hashimoto <cabezon.hashimoto@gmail.com>
 Date:   Thu Mar 19 15:08:03 2009 +0000
 
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
-    	* ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
+            * ja.po: Japanese translation update (Masato Hashimoto)
     
     (Old svn revision: 6949)
 
@@ -8256,7 +9852,7 @@ commit beb70b66431459d37e2cc204baa63d69a94f2643
 Author: Per Kongstad <p_kongstad@op.pl>
 Date:   Sun Mar 15 17:04:18 2009 +0000
 
-    	* da.po: Danish translation update (Per Kongstad)
+            * da.po: Danish translation update (Per Kongstad)
     
     (Old svn revision: 6916)
 
@@ -8641,7 +10237,7 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Mon Feb 9 15:10:07 2009 +0000
 
     .:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     
     (Old svn revision: 6667)
 
@@ -9185,45 +10781,45 @@ Author: Alexander Toresson <alexander.toresson@gmail.com>
 Date:   Sat Dec 20 21:52:03 2008 +0000
 
     xfce4-taskmanager/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-time-out-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-wavelan-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-radio-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-datetime-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-cpufreq-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfburn/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     xfce4-xkb-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-smartbookmark-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-smartpm-plugin/trunk/po:
-    	* sv.po: Swedish translation update (Daniel Nylander)
+            * sv.po: Swedish translation update (Daniel Nylander)
     thunar-media-tags-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfvnc/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-verve-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-xfapplet-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     thunar-archive-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-websearch-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-screenshooter-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-teatime-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfce4-rss-plugin/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     xfmpc/trunk/po:
-    	* sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
+            * sv.po, LINGUAS: Swedish translation added (Daniel Nylander)
     
     (Old svn revision: 6343)
 
@@ -10761,7 +12357,7 @@ Date:   Mon Jul 14 06:56:08 2008 +0000
 
     Maxim Dziumanenko <dziumanenko@gmail.com>
     
-    	* Update Ukrainian translatioon
+            * Update Ukrainian translatioon
     
     
     

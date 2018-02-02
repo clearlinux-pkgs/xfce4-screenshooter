@@ -4,7 +4,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.9.1
-Release  : 5
+Release  : 6
 URL      : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.1.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.1.tar.bz2
 Summary  : No detailed summary available

@@ -1,4 +1,4 @@
-1.9.2
-pkgconfig(x11)
-pkgconfig(ice)
+1.9.3
 libX11-dev
+pkgconfig(ice)
+pkgconfig(x11)

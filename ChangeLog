@@ -1,3 +1,206 @@
+commit 00e5a5c6f3f8a991851ab6ce9b147bc295813dda
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Fri Aug 10 23:13:10 2018 -0300
+
+    Updates for release
+
+commit 0464a051e4048c4e1dcce0cab6ebddd63154580b
+Author: Daniel Muñiz Fontoira <dani@damufo.com>
+Date:   Thu Aug 2 00:31:55 2018 +0200
+
+    I18n: Update translation gl (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 8ed1549a10c08ebf7388f0e484a4c7851327dfff
+Author: José Vieira <jvieira33@sapo.pt>
+Date:   Wed Jul 18 18:32:08 2018 +0200
+
+    I18n: Update translation pt (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit c352c13e5dc23e009145637ca34c342418e174c1
+Author: Anonymous <noreply@xfce.org>
+Date:   Mon Jul 16 18:33:24 2018 +0200
+
+    I18n: Update translation fi (93%).
+    
+    60 translated messages, 4 untranslated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit d343b307ef6f51c2769a561c497689bcc58ced60
+Author: Panagiotis Mantzios <pmantzios@hotmail.com>
+Date:   Sat Jul 14 12:32:16 2018 +0200
+
+    I18n: Update translation el (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 90772086958bd1be94ab4831cbb5e4a9d3ae12ec
+Author: Emanuele Petriglia <inbox@emanuelepetriglia.me>
+Date:   Tue Jul 10 12:31:51 2018 +0200
+
+    I18n: Update translation it (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit ba10c6f502bd38af673e3ff72882b8807d6cc097
+Author: Emanuele Petriglia <inbox@emanuelepetriglia.me>
+Date:   Mon Jul 9 12:31:58 2018 +0200
+
+    I18n: Update translation it (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 234a3db78561298a21581208852cbb29ff66cd80
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Jul 8 14:02:10 2018 -0300
+
+    Fix clipboard action handling (Bug #14513)
+
+commit 44e50c4e4330c7b3135209951f4c14c6bdb3900f
+Author: wakutiteo <wakutiteo@protonmail.com>
+Date:   Sun Jul 8 18:32:16 2018 +0200
+
+    I18n: Update translation es (98%).
+    
+    63 translated messages, 1 untranslated message.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 4fea9ca2d999870716e8b2c6f3dbef35104f6275
+Author: Påvel Nicklasson <pavel2@frimix.se>
+Date:   Mon Jul 2 18:33:24 2018 +0200
+
+    I18n: Update translation sv (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 5548b346279c7cdfc3733d98675912889760fbd4
+Author: Zmicer Turok <zmicerturok@gmail.com>
+Date:   Sun Jun 24 00:32:26 2018 +0200
+
+    I18n: Update translation be (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit a90188e65e3180df809ca11491d3d0a56a93b3e9
+Author: Emanuele Petriglia <inbox@emanuelepetriglia.me>
+Date:   Sat Jun 16 18:33:06 2018 +0200
+
+    I18n: Update translation it (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 5a9e7037a676e30a1dfaf5a90e14ea4e3ccc9560
+Author: Michael Martins <michaelfm21@gmail.com>
+Date:   Wed Jun 6 00:31:45 2018 +0200
+
+    I18n: Update translation pt_BR (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 22ebf283045c6467e237b3a8325b5eec7ffc8777
+Author: Seong-ho Cho <darkcircle.0426@gmail.com>
+Date:   Sat May 26 12:31:57 2018 +0200
+
+    I18n: Update translation ko (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 2521bb4af69db48937a11ec719898e4e62a0c2f9
+Author: Enrico B <enricobe@hotmail.com>
+Date:   Sat May 19 18:31:45 2018 +0200
+
+    I18n: Update translation it (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit fc2decae108b42458f8450c9f6b5143edc6dcdf2
+Author: Саша Петровић <salepetronije@gmail.com>
+Date:   Fri May 18 18:32:27 2018 +0200
+
+    I18n: Update translation sr (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit 64be75c0d43e93443f7802a324262d8b1e5bbfd9
+Author: Ivica  Kolić <ikoli@yahoo.com>
+Date:   Thu May 10 18:31:47 2018 +0200
+
+    I18n: Update translation hr (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit e4f23173442033044b6f94b654126fa23c777fe3
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Mon May 7 22:44:56 2018 -0300
+
+    Fix version tag declaration
+
+commit 1d85cffc4ddb2477c5563f2d677b8b055e209540
+Author: Charles Monzat <superboa@hotmail.fr>
+Date:   Wed May 2 18:31:16 2018 +0200
+
+    I18n: Update translation fr (100%).
+    
+    64 translated messages.
+    
+    Transifex (https://www.transifex.com/xfce/public/).
+
+commit d789db863a4824567fde1fbe388e9615b7b5ecfb
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Tue May 1 15:27:49 2018 -0300
+
+    Allow and remember 0sec delay for all regions (Bug #13763)
+    
+    This changeset also permits the user to define a delay for the
+    "Select a region" mode via UI.
+    Note: if the first dialog is shown, i.e. a region was not passed
+    as an argument, a minimal delay of 200ms will be used to avoid
+    that dialog to appear on the screenshot. The same minimal delay
+    is also used for "Select a region" mode if no delay is defined.
+
+commit 5983ffb03f7e30b945eac1ea6a58ae8e14fda36e
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Tue May 1 13:14:41 2018 -0300
+
+    Allow user to move selection rectangle (Bug #14365)
+
+commit a5267a40c61a50ba772cc1af1ee61e4dbe83a69a
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Tue May 1 11:48:08 2018 -0300
+
+    Post release tag bump.
+
 commit fc8d913fdf54195266b519a47bb18d484f5a5a29
 Author: Andre Miranda <andreldm@xfce.org>
 Date:   Tue May 1 11:41:06 2018 -0300

@@ -4,18 +4,18 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.9.3
-Release  : 10
+Release  : 11
 URL      : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.3.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.3.tar.bz2
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0
-Requires: xfce4-screenshooter-bin
-Requires: xfce4-screenshooter-lib
-Requires: xfce4-screenshooter-data
-Requires: xfce4-screenshooter-license
-Requires: xfce4-screenshooter-locales
-Requires: xfce4-screenshooter-man
+Requires: xfce4-screenshooter-bin = %{version}-%{release}
+Requires: xfce4-screenshooter-data = %{version}-%{release}
+Requires: xfce4-screenshooter-lib = %{version}-%{release}
+Requires: xfce4-screenshooter-license = %{version}-%{release}
+Requires: xfce4-screenshooter-locales = %{version}-%{release}
+Requires: xfce4-screenshooter-man = %{version}-%{release}
 BuildRequires : intltool
 BuildRequires : libX11-dev
 BuildRequires : pkgconfig(exo-1)
@@ -45,9 +45,9 @@ a free online image hosting service.
 %package bin
 Summary: bin components for the xfce4-screenshooter package.
 Group: Binaries
-Requires: xfce4-screenshooter-data
-Requires: xfce4-screenshooter-license
-Requires: xfce4-screenshooter-man
+Requires: xfce4-screenshooter-data = %{version}-%{release}
+Requires: xfce4-screenshooter-license = %{version}-%{release}
+Requires: xfce4-screenshooter-man = %{version}-%{release}
 
 %description bin
 bin components for the xfce4-screenshooter package.
@@ -64,8 +64,8 @@ data components for the xfce4-screenshooter package.
 %package lib
 Summary: lib components for the xfce4-screenshooter package.
 Group: Libraries
-Requires: xfce4-screenshooter-data
-Requires: xfce4-screenshooter-license
+Requires: xfce4-screenshooter-data = %{version}-%{release}
+Requires: xfce4-screenshooter-license = %{version}-%{release}
 
 %description lib
 lib components for the xfce4-screenshooter package.
@@ -103,7 +103,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1534094104
+export SOURCE_DATE_EPOCH=1542223953
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -115,10 +115,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1534094104
+export SOURCE_DATE_EPOCH=1542223953
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/xfce4-screenshooter
-cp COPYING %{buildroot}/usr/share/doc/xfce4-screenshooter/COPYING
+mkdir -p %{buildroot}/usr/share/package-licenses/xfce4-screenshooter
+cp COPYING %{buildroot}/usr/share/package-licenses/xfce4-screenshooter/COPYING
 %make_install
 %find_lang xfce4-screenshooter
 
@@ -142,11 +142,11 @@ cp COPYING %{buildroot}/usr/share/doc/xfce4-screenshooter/COPYING
 /usr/lib64/xfce4/panel/plugins/libscreenshooterplugin.so
 
 %files license
-%defattr(-,root,root,-)
-/usr/share/doc/xfce4-screenshooter/COPYING
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/xfce4-screenshooter/COPYING
 
 %files man
-%defattr(-,root,root,-)
+%defattr(0644,root,root,0755)
 /usr/share/man/man1/xfce4-screenshooter.1
 
 %files locales -f xfce4-screenshooter.lang

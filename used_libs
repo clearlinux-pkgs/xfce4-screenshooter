@@ -1,6 +1,4 @@
 libX11.so.6
-libXext.so.6
-libXfixes.so.3
 libc.so.6
 libcairo.so.2
 libexo-2.so.0

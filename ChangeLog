@@ -1,3 +1,67 @@
+commit d5b5c8035b2321e162b5e7b6b2c683cce47d2edc
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sat Mar 30 18:08:28 2019 -0300
+
+    Updates for release
+
+commit 37a344f02ce8d1fb7e2bcaaec75ceeff57af0774
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Mon Mar 25 22:06:34 2019 -0300
+
+    Fix panel plugin: allow it to save files (Bug #15187)
+
+commit 0008b179e49365fe1f5b1ecce376a9f51b94df50
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Mar 17 14:05:31 2019 -0300
+
+    Bump dependencies
+
+commit 2dccba6808abb015bbe3709bdc40178f44c25445
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Mar 17 14:01:57 2019 -0300
+
+    Move get_active_window functions to utils
+
+commit b2791fa2576fef699ac54bcb83c27d032f7a62b2
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Sun Mar 17 14:00:24 2019 -0300
+
+    Remove unused function
+
+commit 510e6f098ee184a4d37a9a0ccb7a2fda2b5e755e
+Author: Olivier Duchateau <duchateau.olivier@gmail.com>
+Date:   Wed Mar 13 18:12:23 2019 +0100
+
+    Replace deprecated 'gdk_screen_get_active_window' by Xlib functions
+
+commit ae3551c2ca465861d2696336c1da79176b712e2e
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Fri Mar 8 23:43:32 2019 -0300
+
+    Ignore remaining deprecations
+    
+    Because there are no direct replacements.
+    
+    gdk_screen_get_active_window:
+    Either we have to use X11 directly or iterate over the window list
+    from gdk_screen_get_window_stack.
+    
+    gdk_window_process_all_updates:
+    Apparently it's fine to remove this function call, but let's keep
+    it for now, better safe than sorry.
+
+commit b9695e52a16831fba51b524afd19f668059a4c0e
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Fri Mar 8 23:37:36 2019 -0300
+
+    Replace deprecated gdk_screen_width / gdk_screen_height
+
+commit 2cf1495523c6994aceb0e2c1db1b25a416cab904
+Author: Andre Miranda <andreldm@xfce.org>
+Date:   Fri Mar 8 23:31:31 2019 -0300
+
+    Post release tag bump
+
 commit ed666323e68730414d38cb9a1a3695c0e3628274
 Author: Andre Miranda <andreldm@xfce.org>
 Date:   Fri Mar 8 23:25:30 2019 -0300

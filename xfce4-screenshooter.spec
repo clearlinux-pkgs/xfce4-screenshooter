@@ -4,7 +4,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.9.5
-Release  : 14
+Release  : 15
 URL      : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.5.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.5.tar.bz2
 Summary  : Plugin that makes screenshots for the Xfce panel
@@ -18,6 +18,7 @@ Requires: xfce4-screenshooter-locales = %{version}-%{release}
 Requires: xfce4-screenshooter-man = %{version}-%{release}
 BuildRequires : help2man
 BuildRequires : intltool
+BuildRequires : libX11-dev
 BuildRequires : pkgconfig(exo-1)
 BuildRequires : pkgconfig(exo-2)
 BuildRequires : pkgconfig(gdk-3.0)
@@ -25,6 +26,7 @@ BuildRequires : pkgconfig(gdk-x11-3.0)
 BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(gtk+-3.0)
+BuildRequires : pkgconfig(ice)
 BuildRequires : pkgconfig(libsoup-2.4)
 BuildRequires : pkgconfig(libxfce4panel-1.0)
 BuildRequires : pkgconfig(libxfce4panel-2.0)
@@ -32,6 +34,7 @@ BuildRequires : pkgconfig(libxfce4ui-1)
 BuildRequires : pkgconfig(libxfce4ui-2)
 BuildRequires : pkgconfig(libxfce4util-1.0)
 BuildRequires : pkgconfig(libxml-2.0)
+BuildRequires : pkgconfig(x11)
 BuildRequires : pkgconfig(xext)
 
 %description
@@ -102,7 +105,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554059385
+export SOURCE_DATE_EPOCH=1558341905
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -114,7 +124,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1554059385
+export SOURCE_DATE_EPOCH=1558341905
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xfce4-screenshooter
 cp COPYING %{buildroot}/usr/share/package-licenses/xfce4-screenshooter/COPYING

@@ -4,7 +4,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.9.5
-Release  : 15
+Release  : 16
 URL      : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.5.tar.bz2
 Source0  : http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.5.tar.bz2
 Summary  : Plugin that makes screenshots for the Xfce panel

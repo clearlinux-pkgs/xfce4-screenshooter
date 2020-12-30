@@ -1,6 +1,2 @@
-1.9.7
+1.9.8
 help2man
-libX11-dev
-pkgconfig(ice)
-pkgconfig(x11)
-util-linux

@@ -1,5 +1,5 @@
 PKG_NAME := xfce4-screenshooter
-URL = http://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.7.tar.bz2
+URL = https://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.8.tar.bz2
 ARCHIVES = 
 
 include ../common/Makefile.common

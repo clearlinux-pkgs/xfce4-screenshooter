@@ -3,6 +3,6 @@
 # desirable. One name per line, no whitespace.
 #
 libsoup-2.4
-libxfce4panel-1.0
+libxfce4panel-2.0
 libxfce4ui-2
 exo-2

@@ -4,7 +4,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.9.8
-Release  : 21
+Release  : 22
 URL      : https://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.8.tar.bz2
 Source0  : https://archive.xfce.org/src/apps/xfce4-screenshooter/1.9/xfce4-screenshooter-1.9.8.tar.bz2
 Summary  : No detailed summary available
@@ -25,7 +25,6 @@ BuildRequires : pkgconfig(glib-2.0)
 BuildRequires : pkgconfig(gthread-2.0)
 BuildRequires : pkgconfig(gtk+-3.0)
 BuildRequires : pkgconfig(libsoup-2.4)
-BuildRequires : pkgconfig(libxfce4panel-1.0)
 BuildRequires : pkgconfig(libxfce4panel-2.0)
 BuildRequires : pkgconfig(libxfce4ui-2)
 BuildRequires : pkgconfig(libxfce4util-1.0)
@@ -96,7 +95,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1609288315
+export SOURCE_DATE_EPOCH=1609288805
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -116,7 +115,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1609288315
+export SOURCE_DATE_EPOCH=1609288805
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xfce4-screenshooter
 cp %{_builddir}/xfce4-screenshooter-1.9.8/COPYING %{buildroot}/usr/share/package-licenses/xfce4-screenshooter/73ccddd0c27b4492f8182c35f0f7c434b998757c

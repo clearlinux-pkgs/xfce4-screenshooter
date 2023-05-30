@@ -5,7 +5,7 @@
 #
 Name     : xfce4-screenshooter
 Version  : 1.10.4
-Release  : 30
+Release  : 31
 URL      : https://archive.xfce.org/src/apps/xfce4-screenshooter/1.10/xfce4-screenshooter-1.10.4.tar.bz2
 Source0  : https://archive.xfce.org/src/apps/xfce4-screenshooter/1.10/xfce4-screenshooter-1.10.4.tar.bz2
 Summary  : No detailed summary available
@@ -106,7 +106,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1684178197
+export SOURCE_DATE_EPOCH=1685479715
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -138,7 +138,7 @@ cd ../buildavx2;
 make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1684178197
+export SOURCE_DATE_EPOCH=1685479715
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xfce4-screenshooter
 cp %{_builddir}/xfce4-screenshooter-%{version}/COPYING %{buildroot}/usr/share/package-licenses/xfce4-screenshooter/4cc77b90af91e615a64ae04893fdffa7939db84c || :

@@ -9,10 +9,8 @@ libglib-2.0.so.0
 libgobject-2.0.so.0
 libgtk-3.so.0
 libpango-1.0.so.0
-libsoup-2.4.so.1
 libwayland-client.so.0
 libxfce4panel-2.0.so.4
 libxfce4ui-2.so.0
 libxfce4util.so.7
 libxfconf-0.so.3
-libxml2.so.2
